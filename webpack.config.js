@@ -4,7 +4,7 @@ const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 module.exports = {
   stats: { children: true },
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/js/index.js",
   output: {
     path: path.join(__dirname, "dist/"),
     clean: true,
@@ -13,7 +13,7 @@ module.exports = {
   resolve: {
     alias: {
       "@scripts": path.join(__dirname, "src/js"),
-      "@styles": path.join(__dirname, "src/css"),
+      "@styles": path.join(__dirname, "src/styles"),
       "@images": path.join(__dirname, "src/images"),
     },
   },
