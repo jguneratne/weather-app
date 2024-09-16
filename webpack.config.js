@@ -24,10 +24,10 @@ module.exports = {
     new HtmlBundlerPlugin({
       entry: [
         {
-          import: "./src/views/template.ejs", // template file
+          import: "./src/views/index.html", // template file
           filename: "index.html", // => dist/index.html
           data: {
-            title: "Webpack Template",
+            title: "Weather Appgit push",
           }, // pass variables into template
         },
       ],
