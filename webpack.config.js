@@ -27,7 +27,7 @@ module.exports = {
           import: "./src/views/index.html", // template file
           filename: "index.html", // => dist/index.html
           data: {
-            title: "Weather Appgit push",
+            title: "Weather App",
           }, // pass variables into template
         },
       ],
