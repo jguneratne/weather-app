@@ -6,6 +6,7 @@ export async function getForecast() {
   const location = "Worcester, MA";
   const date1 = "2024-09-17";
   const date2 = "2024-09-30";
+  const unitGroup = "metric";
 
   try {
     const response = await fetch(
@@ -15,7 +16,9 @@ export async function getForecast() {
         date1 +
         "/" +
         date2 +
-        "?key=" +
+        "?unitGroup=" +
+        unitGroup +
+        "&key=" +
         key,
 
       {
