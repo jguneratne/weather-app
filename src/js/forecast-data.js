@@ -1,23 +1,20 @@
 import { key } from "./variables.js";
 
+import { location, date1, date2, unitGroup } from "./variables.js";
+
 console.log(key);
 
 export async function getForecast() {
-  const location = "Worcester, MA";
-  const date1 = "2024-09-17";
-  const date2 = "2024-09-30";
-  const unitGroup = "metric";
-
   try {
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
-        location +
+        location.userLocation +
         "/" +
-        date1 +
+        date1.userDate1 +
         "/" +
-        date2 +
+        date2.userDate2 +
         "?unitGroup=" +
-        unitGroup +
+        unitGroup.userUnitGroup +
         "&key=" +
         key,
 

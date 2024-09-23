@@ -21,10 +21,10 @@ export function getUserInput() {
     date2.enteredDate2 = date2Input.value;
     unitGroup.enteredUnitGroup = unitsInput.value.toLowerCase();
 
-    // getForecast();
-    console.log(location.userLocation);
-    console.log(date1.userDate1);
-    console.log(date2.userDate2);
-    console.log(unitGroup.userUnitGroup);
+    getForecast();
+    // console.log(location.userLocation);
+    // console.log(date1.userDate1);
+    // console.log(date2.userDate2);
+    // console.log(unitGroup.userUnitGroup);
   });
 }
