@@ -16,12 +16,65 @@ body {
   grid-template-rows: min-content auto min-content;
 }
 
+header {
+  padding: 0.5em;
+  text-align: center;
+}
+
+/* FORM */
+
+form {
+  border: 0.2em solid black;
+  max-width: 90%;
+  margin: 2em auto;
+}
+
+.form-line {
+  margin: 0.5em 0 1em 0;
+  text-align: center;
+}
+
+.date-line {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: 1em solid transparent;
+}
+
+.buttons-line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+input {
+  margin-top: 0.5em;
+}
+
+.forecast-btn {
+  padding: 0.5em;
+}
+
+/* FOOTER */
+
 .footer-div {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 0.5em;
 }
 
+.copyright-div {
+  justify-self: flex-end;
+}
+
+.my-copyright {
+  margin-right: 1em;
+}
+
 .github-logo {
-  max-width: 3em;
+  max-width: 2em;
 }

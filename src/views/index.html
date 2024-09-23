@@ -14,7 +14,77 @@
         <h1>Weather App</h1>
       </header>
       <main>
-        <p>Placeholder Content</p>
+        <div class="form-div">
+          <form action="#">
+            <div class="form-line">
+              <label for="location">Enter Location or US Zip Code: </label>
+
+              <input
+                type="text"
+                id="location"
+                name="location"
+                class="location"
+                required
+                minlength="2"
+                size="30"
+              />
+            </div>
+
+            <div class="date-line">
+              <div class="form-line">
+                <label for="start">Start date:</label>
+
+                <input
+                  type="date"
+                  id="start"
+                  class="start"
+                  name="start"
+                  value=""
+                />
+              </div>
+
+              <div class="form-line">
+                <label for="start">End date:</label>
+
+                <input type="date" id="end" class="end" name="end" value="" />
+              </div>
+            </div>
+
+            <div class="form-line">
+              <fieldset>
+                <legend>Units:</legend>
+
+                <div class="buttons-line">
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      id="farenheight-unit"
+                      name="farenheight-unit"
+                      class="farenheight-unit"
+                      value="farenheight"
+                    />
+                    <label for="farenheight-unit">Farenheight</label>
+                  </div>
+
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      id="metric-unit"
+                      name="metric-unit"
+                      class="metric-unit"
+                      value="metric"
+                    />
+                    <label for="metric-unit">Celcius</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-line">
+              <button type="submit" class="forecast-btn">Get Forecast</button>
+            </div>
+          </form>
+        </div>
       </main>
       <footer>
         <footer class="footer-div">
