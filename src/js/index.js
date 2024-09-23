@@ -1,7 +1,7 @@
 console.log("Weather App");
 
-import { getForecast } from "./forecast-data";
+import { getUserInput } from "./user-input";
 
 document.addEventListener("DOMContentLoaded", () => {
-  getForecast();
+  getUserInput();
 });
