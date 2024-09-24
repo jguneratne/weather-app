@@ -34,13 +34,9 @@ form {
   text-align: center;
 }
 
-.date-line {
-  display: flex;
-  flex-direction: column;
-}
-
 fieldset {
-  border: 1em solid transparent;
+  border: 0.4em solid transparent;
+  margin-top: 1em;
 }
 
 .buttons-line {
@@ -48,6 +44,19 @@ fieldset {
   display: flex;
   justify-content: center;
   gap: 1em;
+}
+
+.date-line {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 1.5em;
+}
+
+.start-date-line,
+.end-date-line {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
