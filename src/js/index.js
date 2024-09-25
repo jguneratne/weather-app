@@ -1,7 +1,8 @@
 console.log("Weather App");
 
-import { getUserInput } from "./user-input";
+import { getTodayInput, getHistoricInput } from "./user-input";
 
 document.addEventListener("DOMContentLoaded", () => {
-  getUserInput();
+  getTodayInput();
+  getHistoricInput();
 });

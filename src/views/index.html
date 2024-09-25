@@ -15,15 +15,17 @@
       </header>
       <main>
         <div class="form-div">
-          <form action="#">
+          <form class="today-form" action="#">
             <div class="form-line">
-              <label for="location">Enter Location or US Zip Code: </label>
+              <label for="today-location"
+                >Enter Location or US Zip Code:
+              </label>
 
               <input
                 type="text"
-                id="location"
-                name="location"
-                class="location"
+                id="today-location"
+                name="today-location"
+                class="today-location"
                 required
                 minlength="2"
                 size="30"
@@ -38,24 +40,81 @@
                   <div class="radio-btn">
                     <input
                       type="radio"
-                      id="fahrenheit-unit"
-                      name="units"
-                      class="fahrenheit-unit"
+                      id="today-fahrenheit-unit"
+                      name="today-units"
+                      class="today-fahrenheit-unit"
                       value="us"
-                      checked
+                      required
                     />
-                    <label for="fahrenheit-unit">Fahrenheit</label>
+                    <label for="today-fahrenheit-unit">Fahrenheit</label>
                   </div>
 
                   <div class="radio-btn">
                     <input
                       type="radio"
-                      id="metric-unit"
-                      name="units"
-                      class="metric-unit"
+                      id="today-metric-unit"
+                      name="today-units"
+                      class="today-metric-unit"
                       value="metric"
                     />
-                    <label for="metric-unit">Celcius</label>
+                    <label for="today-metric-unit">Celcius</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-line">
+              <button type="submit" class="today-forecast-btn">
+                Get Forecast
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-div">
+          <form class="historic-form" action="#">
+            <div class="form-line">
+              <label for="historic-location"
+                >Enter Location or US Zip Code:
+              </label>
+
+              <input
+                type="text"
+                id="historic-location"
+                name="historic-location"
+                class="historic-location"
+                required
+                minlength="2"
+                size="30"
+              />
+            </div>
+
+            <div class="form-line">
+              <fieldset>
+                <legend>Units:</legend>
+
+                <div class="buttons-line">
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      id="historic-fahrenheit-unit"
+                      name="historic-units"
+                      class="historic-fahrenheit-unit"
+                      value="us"
+                      required
+                    />
+                    <label for="historic-fahrenheit-unit">Fahrenheit</label>
+                  </div>
+
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      id="historic-metric-unit"
+                      name="historic-units"
+                      class="historic-metric-unit"
+                      value="metric"
+                    />
+                    <label for="historic-metric-unit">Celcius</label>
                   </div>
                 </div>
               </fieldset>
@@ -82,7 +141,9 @@
             </div>
 
             <div class="form-line">
-              <button type="submit" class="forecast-btn">Get Forecast</button>
+              <button type="submit" class="historic-forecast-btn">
+                Get Forecast
+              </button>
             </div>
           </form>
         </div>

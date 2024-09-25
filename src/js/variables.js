@@ -1,20 +1,38 @@
 export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 
-export const dataForm = document.querySelector("form");
-export const locationInput = document.querySelector(".location");
+export const today = new Date().toISOString().substring(0, 10);
+
+export const todayForm = document.querySelector(".today-form");
+export const historicForm = document.querySelector(".historic-form");
+export const todayLocationInput = document.querySelector(".today-location");
+export const historicLocationInput =
+  document.querySelector(".historic-location");
 export const date1Input = document.querySelector(".start");
 export const date2Input = document.querySelector(".end");
-export const unitsInput = document.querySelector("input[name='units']");
+export const todayUnitsInput = document.getElementsByName("today-units");
+export const historicUnitsInput = document.getElementsByName("historic-units");
 
-export let location = {
-  userLocation: "",
+export let todayLocation = {
+  userTodayLocation: "",
 
-  get enteredLocation() {
-    return this.userLocation;
+  get enteredTodayLocation() {
+    return this.userTodayLocation;
   },
 
-  set enteredLocation(newUserLocation) {
-    this.userLocation = newUserLocation;
+  set enteredTodayLocation(newUserTodayLocation) {
+    this.userTodayLocation = newUserTodayLocation;
+  },
+};
+
+export let historicLocation = {
+  userHistoricLocation: "",
+
+  get enteredHistoricLocation() {
+    return this.userHistoricLocation;
+  },
+
+  set enteredHistoricLocation(newUserHistoricLocation) {
+    this.userHistoricLocation = newUserHistoricLocation;
   },
 };
 
@@ -42,14 +60,26 @@ export let date2 = {
   },
 };
 
-export let unitGroup = {
-  userUnitGroup: "",
+export let todayUnitGroup = {
+  userTodayUnitGroup: "",
 
-  get enteredUnitGroup() {
-    return this.userUnitGroup;
+  get enteredTodayUnitGroup() {
+    return this.userTodayUnitGroup;
   },
 
-  set enteredUnitGroup(newUserUnitGroup) {
-    this.userUnitGroup = newUserUnitGroup;
+  set enteredTodayUnitGroup(newTodayUserUnitGroup) {
+    this.userTodayUnitGroup = newTodayUserUnitGroup;
+  },
+};
+
+export let historicUnitGroup = {
+  userHistoricUnitGroup: "",
+
+  get enteredHistoricUnitGroup() {
+    return this.userHistoricUnitGroup;
+  },
+
+  set enteredHistoricUnitGroup(newHistoricUserUnitGroup) {
+    this.userHistoricUnitGroup = newHistoricUserUnitGroup;
   },
 };
