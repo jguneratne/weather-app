@@ -1,3 +1,15 @@
+// Tabls Ctrl Variables
+
+export const tabBtns = document.querySelectorAll(".tab-btn");
+export const selectToday = document.querySelector(".today-btn");
+export const selectHistoric = document.querySelector(".historic-btn");
+export const todayForecastDiv = document.querySelector("[data-form='today']");
+export const historicForecastDiv = document.querySelector(
+  "[data-form='historic']"
+);
+
+// Forecast Data Variables
+
 export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 
 export const today = new Date().toISOString().substring(0, 10);
