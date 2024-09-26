@@ -14,138 +14,155 @@
         <h1>Weather App</h1>
       </header>
       <main>
-        <div class="form-div">
-          <form class="today-form" action="#">
-            <div class="form-line">
-              <label for="today-location"
-                >Enter Location or US Zip Code:
-              </label>
+        <div class="tabs-div">
+          <div class="btns-div">
+            <button type="button" class="today-btn">Today's Forecast</button>
+            <button type="button" class="historic-btn">
+              Historic Forecast
+            </button>
+          </div>
 
-              <input
-                type="text"
-                id="today-location"
-                name="today-location"
-                class="today-location"
-                required
-                minlength="2"
-                size="30"
-              />
+          <div class="forms-tab">
+            <div class="form-div" data-form="today">
+              <form class="today-form" action="#">
+                <div class="form-line">
+                  <label for="today-location"
+                    >Enter Location or US Zip Code:
+                  </label>
+
+                  <input
+                    type="text"
+                    id="today-location"
+                    name="today-location"
+                    class="today-location"
+                    required
+                    minlength="2"
+                    size="30"
+                  />
+                </div>
+
+                <div class="form-line">
+                  <fieldset>
+                    <legend>Units:</legend>
+
+                    <div class="buttons-line">
+                      <div class="radio-btn">
+                        <input
+                          type="radio"
+                          id="today-fahrenheit-unit"
+                          name="today-units"
+                          class="today-fahrenheit-unit"
+                          value="us"
+                          required
+                        />
+                        <label for="today-fahrenheit-unit">Fahrenheit</label>
+                      </div>
+
+                      <div class="radio-btn">
+                        <input
+                          type="radio"
+                          id="today-metric-unit"
+                          name="today-units"
+                          class="today-metric-unit"
+                          value="metric"
+                        />
+                        <label for="today-metric-unit">Celcius</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="form-line">
+                  <button type="submit" class="today-forecast-btn">
+                    Get Forecast
+                  </button>
+                </div>
+              </form>
             </div>
 
-            <div class="form-line">
-              <fieldset>
-                <legend>Units:</legend>
+            <div class="form-div" data-form="historic">
+              <form class="historic-form" action="#">
+                <div class="form-line">
+                  <label for="historic-location"
+                    >Enter Location or US Zip Code:
+                  </label>
 
-                <div class="buttons-line">
-                  <div class="radio-btn">
+                  <input
+                    type="text"
+                    id="historic-location"
+                    name="historic-location"
+                    class="historic-location"
+                    required
+                    minlength="2"
+                    size="30"
+                  />
+                </div>
+
+                <div class="form-line">
+                  <fieldset>
+                    <legend>Units:</legend>
+
+                    <div class="buttons-line">
+                      <div class="radio-btn">
+                        <input
+                          type="radio"
+                          id="historic-fahrenheit-unit"
+                          name="historic-units"
+                          class="historic-fahrenheit-unit"
+                          value="us"
+                          required
+                        />
+                        <label for="historic-fahrenheit-unit">Fahrenheit</label>
+                      </div>
+
+                      <div class="radio-btn">
+                        <input
+                          type="radio"
+                          id="historic-metric-unit"
+                          name="historic-units"
+                          class="historic-metric-unit"
+                          value="metric"
+                        />
+                        <label for="historic-metric-unit">Celcius</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="date-line">
+                  <div class="form-line start-date-line">
+                    <label for="start">Start date:</label>
+
                     <input
-                      type="radio"
-                      id="today-fahrenheit-unit"
-                      name="today-units"
-                      class="today-fahrenheit-unit"
-                      value="us"
-                      required
+                      type="date"
+                      id="start"
+                      class="start"
+                      name="start"
+                      value=""
                     />
-                    <label for="today-fahrenheit-unit">Fahrenheit</label>
                   </div>
 
-                  <div class="radio-btn">
+                  <div class="form-line end-date-line">
+                    <label for="start">End date:</label>
+
                     <input
-                      type="radio"
-                      id="today-metric-unit"
-                      name="today-units"
-                      class="today-metric-unit"
-                      value="metric"
+                      type="date"
+                      id="end"
+                      class="end"
+                      name="end"
+                      value=""
                     />
-                    <label for="today-metric-unit">Celcius</label>
                   </div>
                 </div>
-              </fieldset>
-            </div>
 
-            <div class="form-line">
-              <button type="submit" class="today-forecast-btn">
-                Get Forecast
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <div class="form-div">
-          <form class="historic-form" action="#">
-            <div class="form-line">
-              <label for="historic-location"
-                >Enter Location or US Zip Code:
-              </label>
-
-              <input
-                type="text"
-                id="historic-location"
-                name="historic-location"
-                class="historic-location"
-                required
-                minlength="2"
-                size="30"
-              />
-            </div>
-
-            <div class="form-line">
-              <fieldset>
-                <legend>Units:</legend>
-
-                <div class="buttons-line">
-                  <div class="radio-btn">
-                    <input
-                      type="radio"
-                      id="historic-fahrenheit-unit"
-                      name="historic-units"
-                      class="historic-fahrenheit-unit"
-                      value="us"
-                      required
-                    />
-                    <label for="historic-fahrenheit-unit">Fahrenheit</label>
-                  </div>
-
-                  <div class="radio-btn">
-                    <input
-                      type="radio"
-                      id="historic-metric-unit"
-                      name="historic-units"
-                      class="historic-metric-unit"
-                      value="metric"
-                    />
-                    <label for="historic-metric-unit">Celcius</label>
-                  </div>
+                <div class="form-line">
+                  <button type="submit" class="historic-forecast-btn">
+                    Get Forecast
+                  </button>
                 </div>
-              </fieldset>
+              </form>
             </div>
-
-            <div class="date-line">
-              <div class="form-line start-date-line">
-                <label for="start">Start date:</label>
-
-                <input
-                  type="date"
-                  id="start"
-                  class="start"
-                  name="start"
-                  value=""
-                />
-              </div>
-
-              <div class="form-line end-date-line">
-                <label for="start">End date:</label>
-
-                <input type="date" id="end" class="end" name="end" value="" />
-              </div>
-            </div>
-
-            <div class="form-line">
-              <button type="submit" class="historic-forecast-btn">
-                Get Forecast
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </main>
       <footer>
