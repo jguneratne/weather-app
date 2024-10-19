@@ -1,8 +1,6 @@
 import { geoKey, forecastLatitude, forecastLongitude } from "./variables";
 
 export async function getLocationName() {
-  console.log(typeof forecastLatitude.latitude, forecastLatitude.latitude);
-
   const requestOptions = {
     method: "GET",
   };
