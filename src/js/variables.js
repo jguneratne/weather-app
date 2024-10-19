@@ -95,3 +95,31 @@ export let historicUnitGroup = {
     this.userHistoricUnitGroup = newHistoricUserUnitGroup;
   },
 };
+
+// Location Data Variables
+
+export const geoKey = "cd840e39cf3b4160a25abcf0554fdc0c";
+
+export let forecastLatitude = {
+  latitude: "",
+
+  get userLatitude() {
+    return this.latitude;
+  },
+
+  set userLatitude(newLatitude) {
+    this.latitude = newLatitude;
+  },
+};
+
+export let forecastLongitude = {
+  longitude: "",
+
+  get userLongitude() {
+    return this.longitude;
+  },
+
+  set userLongitude(newLongitude) {
+    this.longitude = newLongitude;
+  },
+};

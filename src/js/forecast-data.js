@@ -1,6 +1,5 @@
-import { key } from "./variables.js";
-
 import {
+  key,
   today,
   todayLocation,
   historicLocation,
@@ -8,7 +7,11 @@ import {
   date2,
   todayUnitGroup,
   historicUnitGroup,
+  forecastLatitude,
+  forecastLongitude,
 } from "./variables.js";
+
+import { getLocationName } from "./location.js";
 
 console.log(key);
 
@@ -31,8 +34,15 @@ export async function getTodayForecast() {
     );
     const forecastData = await response.json();
     console.log(forecastData);
+
+    forecastLatitude.userLatitude = forecastData.latitude;
+    forecastLongitude.userLongitude = forecastData.longitude;
+    console.log(forecastLatitude.latitude);
+    console.log(forecastLongitude.longitude);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
+  } finally {
+    getLocationName();
   }
 }
 
@@ -56,8 +66,13 @@ export async function getHistoricForecast() {
       }
     );
     const forecastData = await response.json();
-    console.log(forecastData);
+    forecastLatitude.userLatitude = forecastData.latitude;
+    forecastLongitude.userLongitude = forecastData.longitude;
+    console.log(forecastLatitude.latitude);
+    console.log(forecastLongitude.longitude);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
+  } finally {
+    getLocationName();
   }
 }
