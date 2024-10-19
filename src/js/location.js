@@ -25,13 +25,7 @@ export async function getLocationName() {
     const location = await locationResponse.json();
     console.log(location);
     console.log(
-      location.features[0].properties.city +
-        ", " +
-        location.features[0].properties.state_code +
-        ", " +
-        location.features[0].properties.postcode +
-        ", " +
-        location.features[0].properties.country
+      "Copyright Attribution: OpenStreetMap, openstreetmap.org/copyright"
     );
 
     console.log(
