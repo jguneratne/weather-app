@@ -13,8 +13,6 @@ import {
 
 import { getLocationName } from "./location.js";
 
-console.log(key);
-
 export async function getTodayForecast() {
   try {
     const response = await fetch(
