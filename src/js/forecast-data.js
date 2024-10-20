@@ -1,6 +1,7 @@
 import {
   key,
   today,
+  todayPlusFifteen,
   todayLocation,
   historicLocation,
   date1,
@@ -20,6 +21,8 @@ export async function getTodayForecast() {
         todayLocation.userTodayLocation +
         "/" +
         today +
+        "/" +
+        todayPlusFifteen +
         "?unitGroup=" +
         todayUnitGroup.userTodayUnitGroup +
         "&key=" +
@@ -45,6 +48,8 @@ export async function getTodayForecast() {
 }
 
 export async function getHistoricForecast() {
+  console.log(date1.userDate1);
+  console.log(date2.userDate2);
   try {
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
