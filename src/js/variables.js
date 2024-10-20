@@ -14,6 +14,14 @@ export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 
 export const today = new Date().toISOString().substring(0, 10);
 
+const futureDate = new Date();
+futureDate.setDate(new Date().getDate() + 15);
+export const todayPlusFifteen = futureDate.toISOString().substring(0, 10);
+
+const pastDate = new Date();
+pastDate.setDate(new Date().getDate() - 15);
+export const todayMinusFifteen = pastDate.toISOString().substring(0, 10);
+
 export const todayForm = document.querySelector(".today-form");
 export const historicForm = document.querySelector(".historic-form");
 export const todayLocationInput = document.querySelector(".today-location");
