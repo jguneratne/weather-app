@@ -14,152 +14,165 @@
         <h1>Weather App</h1>
       </header>
       <main>
-        <div class="tabs-div">
+        <div class="form-div" data-form="input">
+          <form class="input-form" action="#">
+            <div class="form-line">
+              <label for="location">Location or Post Code: </label>
+
+              <input
+                type="text"
+                id="location"
+                name="location"
+                class="location"
+                required
+                minlength="2"
+                size="30"
+              />
+            </div>
+
+            <div class="form-line">
+              <fieldset>
+                <legend>Units:</legend>
+
+                <div class="buttons-line">
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      id="fahrenheit-unit"
+                      name="units"
+                      class="fahrenheit-unit"
+                      value="us"
+                      required
+                    />
+                    <label for="fahrenheit-unit">Fahrenheit</label>
+                  </div>
+
+                  <div class="radio-btn">
+                    <input
+                      type="radio"
+                      id="metric-unit"
+                      name="units"
+                      class="metric-unit"
+                      value="metric"
+                    />
+                    <label for="metric-unit">Celcius</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-line">
+              <button type="submit" class="forecast-btn">Get Forecast</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="dates-div">
+          <h2 class="hist-dates-header">Select Historic Dates:</h2>
+          <div class="date-line">
+            <div class="form-line start-date-line">
+              <label for="start" form="input-form">Start date:</label>
+
+              <input
+                type="date"
+                id="start"
+                class="start"
+                name="start"
+                value=""
+              />
+            </div>
+
+            <div class="form-line end-date-line">
+              <label for="end" form="input-form">End date:</label>
+
+              <input type="date" id="end" class="end" name="end" value="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="display-info">
           <div class="btns-div">
-            <button type="button" class="tab-btn today-btn">
-              Today's Forecast
+            <button type="button" class="tab-btn today-btn" data-tab="today">
+              Today
             </button>
-            <button type="button" class="tab-btn historic-btn">
-              Historic Forecast
+            <button
+              type="button"
+              class="tab-btn fifteen-btn"
+              data-tab="fifteen"
+            >
+              Fifteen Day
+            </button>
+            <button
+              type="button"
+              class="tab-btn historic-btn"
+              data-tab="historic"
+            >
+              Historic
             </button>
           </div>
 
-          <div class="forms-tab">
-            <div class="form-div" data-form="today">
-              <form class="today-form" action="#">
-                <div class="form-line">
-                  <label for="today-location">Location or Post Code: </label>
+          <div class="forecast-info" data-name="today">
+            <data-line>
+              <p class="data-heading">Location:</p>
+              <p class="location">TODAY</p>
+            </data-line>
 
-                  <input
-                    type="text"
-                    id="today-location"
-                    name="today-location"
-                    class="today-location"
-                    required
-                    minlength="2"
-                    size="30"
-                  />
-                </div>
+            <data-line>
+              <p class="data-heading">Cloudcover:</p>
+              <p class="cloudcover"></p>
+            </data-line>
 
-                <div class="form-line">
-                  <fieldset>
-                    <legend>Units:</legend>
+            <data-line>
+              <p class="data-heading">Conditions:</p>
+              <p class="conditions"></p>
+            </data-line>
 
-                    <div class="buttons-line">
-                      <div class="radio-btn">
-                        <input
-                          type="radio"
-                          id="today-fahrenheit-unit"
-                          name="today-units"
-                          class="today-fahrenheit-unit"
-                          value="us"
-                          required
-                        />
-                        <label for="today-fahrenheit-unit">Fahrenheit</label>
-                      </div>
+            <data-line>
+              <p class="data-heading">Description:</p>
+              <p class="description"></p>
+            </data-line>
+          </div>
+          <div class="forecast-info" data-name="fifteen">
+            <data-line>
+              <p class="data-heading">Location:</p>
+              <p class="location">FIFTEEN</p>
+            </data-line>
 
-                      <div class="radio-btn">
-                        <input
-                          type="radio"
-                          id="today-metric-unit"
-                          name="today-units"
-                          class="today-metric-unit"
-                          value="metric"
-                        />
-                        <label for="today-metric-unit">Celcius</label>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
+            <data-line>
+              <p class="data-heading">Cloudcover:</p>
+              <p class="cloudcover"></p>
+            </data-line>
 
-                <div class="form-line">
-                  <button type="submit" class="today-forecast-btn">
-                    Get Forecast
-                  </button>
-                </div>
-              </form>
-            </div>
+            <data-line>
+              <p class="data-heading">Conditions:</p>
+              <p class="conditions"></p>
+            </data-line>
 
-            <div class="form-div" data-form="historic">
-              <form class="historic-form" action="#">
-                <div class="form-line">
-                  <label for="historic-location">Location or Post Code: </label>
+            <data-line>
+              <p class="data-heading">Description:</p>
+              <p class="description"></p>
+            </data-line>
+          </div>
+          <div class="forecast-info" data-name="historic">
+            <data-line>
+              <p class="data-heading">Location:</p>
+              <p class="location">HISTORIC</p>
+            </data-line>
 
-                  <input
-                    type="text"
-                    id="historic-location"
-                    name="historic-location"
-                    class="historic-location"
-                    required
-                    minlength="2"
-                    size="30"
-                  />
-                </div>
+            <data-line>
+              <p class="data-heading">Cloudcover:</p>
+              <p class="cloudcover"></p>
+            </data-line>
 
-                <div class="form-line">
-                  <fieldset>
-                    <legend>Units:</legend>
+            <data-line>
+              <p class="data-heading">Conditions:</p>
+              <p class="conditions"></p>
+            </data-line>
 
-                    <div class="buttons-line">
-                      <div class="radio-btn">
-                        <input
-                          type="radio"
-                          id="historic-fahrenheit-unit"
-                          name="historic-units"
-                          class="historic-fahrenheit-unit"
-                          value="us"
-                          required
-                        />
-                        <label for="historic-fahrenheit-unit">Fahrenheit</label>
-                      </div>
-
-                      <div class="radio-btn">
-                        <input
-                          type="radio"
-                          id="historic-metric-unit"
-                          name="historic-units"
-                          class="historic-metric-unit"
-                          value="metric"
-                        />
-                        <label for="historic-metric-unit">Celcius</label>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-
-                <div class="date-line">
-                  <div class="form-line start-date-line">
-                    <label for="start">Start date:</label>
-
-                    <input
-                      type="date"
-                      id="start"
-                      class="start"
-                      name="start"
-                      value=""
-                    />
-                  </div>
-
-                  <div class="form-line end-date-line">
-                    <label for="start">End date:</label>
-
-                    <input
-                      type="date"
-                      id="end"
-                      class="end"
-                      name="end"
-                      value=""
-                    />
-                  </div>
-                </div>
-
-                <div class="form-line">
-                  <button type="submit" class="historic-forecast-btn">
-                    Get Forecast
-                  </button>
-                </div>
-              </form>
-            </div>
+            <data-line>
+              <p class="data-heading">Description:</p>
+              <p class="description"></p>
+            </data-line>
           </div>
         </div>
       </main>
