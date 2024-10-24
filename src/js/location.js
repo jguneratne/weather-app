@@ -1,4 +1,9 @@
-import { geoKey, forecastLatitude, forecastLongitude } from "./variables";
+import {
+  geoKey,
+  forecastLatitude,
+  forecastLongitude,
+  displayLocation,
+} from "./variables";
 
 export async function getLocationName() {
   const requestOptions = {
@@ -20,19 +25,20 @@ export async function getLocationName() {
         credentials: "omit",
       }
     );
-    const location = await locationResponse.json();
-    console.log(location);
+    const locationData = await locationResponse.json();
+    console.log(locationData);
     console.log(
       "Copyright Attribution: OpenStreetMap, openstreetmap.org/copyright"
     );
 
-    console.log(
-      location.features[0].properties.datasource.attribution +
-        ", " +
-        location.features[0].properties.datasource.license +
-        ", " +
-        location.features[0].properties.datasource.url
-    );
+    displayLocation.responseLocation =
+      locationData.features[0].properties.city +
+      ", " +
+      locationData.features[0].properties.state_code +
+      ", " +
+      locationData.features[0].properties.country;
+
+    console.log(displayLocation.returnedLocation);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
   }
