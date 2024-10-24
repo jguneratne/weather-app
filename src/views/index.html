@@ -17,7 +17,7 @@
         <div class="form-div" data-form="input">
           <form class="input-form" action="#">
             <div class="form-line">
-              <label for="location">Location or Post Code: </label>
+              <label for="location">Enter Location: </label>
 
               <input
                 type="text"
@@ -27,6 +27,7 @@
                 required
                 minlength="2"
                 size="30"
+                autocomplete="off"
               />
             </div>
 
@@ -62,7 +63,9 @@
             </div>
 
             <div class="form-line">
-              <button type="submit" class="forecast-btn">Get Forecast</button>
+              <button type="button" name="submit-today" class="forecast-btn">
+                Get Forecast
+              </button>
             </div>
           </form>
         </div>
@@ -84,9 +87,18 @@
 
             <div class="form-line end-date-line">
               <label for="end" form="input-form">End date:</label>
-
               <input type="date" id="end" class="end" name="end" value="" />
             </div>
+          </div>
+          <div class="form-line">
+            <button
+              type="button"
+              form="input-form"
+              name="submit-historic"
+              class="hist-forecast-btn"
+            >
+              Get Historic Forecast
+            </button>
           </div>
         </div>
 

@@ -6,8 +6,7 @@ export const forecastDivs = document.querySelectorAll(".forecast-info");
 export const todayForecastDiv = document.querySelector("[data-name='today']");
 
 // Forecast Data Variables
-
-// export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
+export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 
 export const today = new Date().toISOString().substring(0, 10);
 
@@ -19,112 +18,101 @@ const pastDate = new Date();
 pastDate.setDate(new Date().getDate() - 15);
 export const todayMinusFifteen = pastDate.toISOString().substring(0, 10);
 
-// export const todayForm = document.querySelector(".today-form");
-// export const historicForm = document.querySelector(".historic-form");
-// export const todayLocationInput = document.querySelector(".today-location");
-// export const historicLocationInput =
-//   document.querySelector(".historic-location");
+// Form Inputs
+
+export const locationInput = document.querySelector(".location");
+export const unitsInput = document.getElementsByName("units");
 export const date1Input = document.querySelector(".start");
 export const date2Input = document.querySelector(".end");
-// export const todayUnitsInput = document.getElementsByName("today-units");
-// export const historicUnitsInput = document.getElementsByName("historic-units");
+export const todayBtn = document.querySelector(".forecast-btn");
+export const historicBtn = document.querySelector(".hist-forecast-btn");
 
-// export let todayLocation = {
-//   userTodayLocation: "",
+// form Input Data
 
-//   get enteredTodayLocation() {
-//     return this.userTodayLocation;
-//   },
+export let location = {
+  userLocation: "",
 
-//   set enteredTodayLocation(newUserTodayLocation) {
-//     this.userTodayLocation = newUserTodayLocation;
-//   },
-// };
+  get enteredLocation() {
+    return this.userLocation;
+  },
 
-// export let historicLocation = {
-//   userHistoricLocation: "",
+  set enteredLocation(newUserLocation) {
+    this.userLocation = newUserLocation;
+  },
+};
 
-//   get enteredHistoricLocation() {
-//     return this.userHistoricLocation;
-//   },
+export let unitGroup = {
+  userUnitGroup: "",
 
-//   set enteredHistoricLocation(newUserHistoricLocation) {
-//     this.userHistoricLocation = newUserHistoricLocation;
-//   },
-// };
+  get enteredUnitGroup() {
+    return this.userUnitGroup;
+  },
 
-// export let date1 = {
-//   userDate1: "",
+  set enteredUnitGroup(newUserUnitGroup) {
+    this.userUnitGroup = newUserUnitGroup;
+  },
+};
 
-//   get enteredDate1() {
-//     return this.userDate1;
-//   },
+export let date1 = {
+  userDate1: "",
 
-//   set enteredDate1(newUserDate1) {
-//     this.userDate1 = newUserDate1;
-//   },
-// };
+  get enteredDate1() {
+    return this.userDate1;
+  },
 
-// export let date2 = {
-//   userDate2: "",
+  set enteredDate1(newUserDate1) {
+    this.userDate1 = newUserDate1;
+  },
+};
 
-//   get enteredDate2() {
-//     return this.userDate2;
-//   },
+export let date2 = {
+  userDate2: "",
 
-//   set enteredDate2(newUserDate2) {
-//     this.userDate2 = newUserDate2;
-//   },
-// };
+  get enteredDate2() {
+    return this.userDate2;
+  },
 
-// export let todayUnitGroup = {
-//   userTodayUnitGroup: "",
+  set enteredDate2(newUserDate2) {
+    this.userDate2 = newUserDate2;
+  },
+};
 
-//   get enteredTodayUnitGroup() {
-//     return this.userTodayUnitGroup;
-//   },
+// Location Data Variables
 
-//   set enteredTodayUnitGroup(newTodayUserUnitGroup) {
-//     this.userTodayUnitGroup = newTodayUserUnitGroup;
-//   },
-// };
+export const geoKey = "cd840e39cf3b4160a25abcf0554fdc0c";
 
-// export let historicUnitGroup = {
-//   userHistoricUnitGroup: "",
+export let forecastLatitude = {
+  latitude: "",
 
-//   get enteredHistoricUnitGroup() {
-//     return this.userHistoricUnitGroup;
-//   },
+  get userLatitude() {
+    return this.latitude;
+  },
 
-//   set enteredHistoricUnitGroup(newHistoricUserUnitGroup) {
-//     this.userHistoricUnitGroup = newHistoricUserUnitGroup;
-//   },
-// };
+  set userLatitude(newLatitude) {
+    this.latitude = newLatitude;
+  },
+};
 
-// // Location Data Variables
+export let forecastLongitude = {
+  longitude: "",
 
-// export const geoKey = "cd840e39cf3b4160a25abcf0554fdc0c";
+  get userLongitude() {
+    return this.longitude;
+  },
 
-// export let forecastLatitude = {
-//   latitude: "",
+  set userLongitude(newLongitude) {
+    this.longitude = newLongitude;
+  },
+};
 
-//   get userLatitude() {
-//     return this.latitude;
-//   },
+export let displayLocation = {
+  returnedLocation: "",
 
-//   set userLatitude(newLatitude) {
-//     this.latitude = newLatitude;
-//   },
-// };
+  get responseLocation() {
+    return this.returnedLocation;
+  },
 
-// export let forecastLongitude = {
-//   longitude: "",
-
-//   get userLongitude() {
-//     return this.longitude;
-//   },
-
-//   set userLongitude(newLongitude) {
-//     this.longitude = newLongitude;
-//   },
-// };
+  set responseLocation(newDisplayLocation) {
+    this.returnedLocation = newDisplayLocation;
+  },
+};

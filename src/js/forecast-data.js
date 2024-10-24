@@ -2,12 +2,10 @@ import {
   key,
   today,
   todayPlusFifteen,
-  todayLocation,
-  historicLocation,
+  location,
+  unitGroup,
   date1,
   date2,
-  todayUnitGroup,
-  historicUnitGroup,
   forecastLatitude,
   forecastLongitude,
 } from "./variables.js";
@@ -18,13 +16,13 @@ export async function getTodayForecast() {
   try {
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
-        todayLocation.userTodayLocation +
+        location.userLocation +
         "/" +
         today +
         "/" +
         todayPlusFifteen +
         "?unitGroup=" +
-        todayUnitGroup.userTodayUnitGroup +
+        unitGroup.userUnitGroup +
         "&key=" +
         key,
 
@@ -33,11 +31,11 @@ export async function getTodayForecast() {
         credentials: "omit",
       }
     );
-    const forecastData = await response.json();
-    console.log(forecastData);
+    const todayData = await response.json();
+    console.log(todayData);
 
-    forecastLatitude.userLatitude = forecastData.latitude;
-    forecastLongitude.userLongitude = forecastData.longitude;
+    forecastLatitude.userLatitude = todayData.latitude;
+    forecastLongitude.userLongitude = todayData.longitude;
     console.log(forecastLatitude.latitude);
     console.log(forecastLongitude.longitude);
   } catch (e) {
@@ -53,13 +51,13 @@ export async function getHistoricForecast() {
   try {
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
-        historicLocation.userHistoricLocation +
+        location.userLocation +
         "/" +
         date1.userDate1 +
         "/" +
         date2.userDate2 +
         "?unitGroup=" +
-        historicUnitGroup.userHistoricUnitGroup +
+        unitGroup.userUnitGroup +
         "&key=" +
         key,
 
@@ -68,9 +66,10 @@ export async function getHistoricForecast() {
         credentials: "omit",
       }
     );
-    const forecastData = await response.json();
-    forecastLatitude.userLatitude = forecastData.latitude;
-    forecastLongitude.userLongitude = forecastData.longitude;
+    const historicData = await response.json();
+    console.log(historicData);
+    forecastLatitude.userLatitude = historicData.latitude;
+    forecastLongitude.userLongitude = historicData.longitude;
     console.log(forecastLatitude.latitude);
     console.log(forecastLongitude.longitude);
   } catch (e) {
