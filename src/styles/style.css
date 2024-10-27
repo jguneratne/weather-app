@@ -26,7 +26,7 @@ header {
 .form-div {
   margin-top: 1em;
   max-width: 90%;
-  margin: 1.5em auto 2.5em auto;
+  margin: 1.5em auto 2em auto;
   border: 1px solid black;
 }
 
@@ -77,6 +77,14 @@ fieldset {
 
 input {
   margin-top: 0.5em;
+}
+
+/* Locations Drop-Down */
+
+.loc-dropdown-div {
+  max-width: 90%;
+  text-align: center;
+  margin: 0 auto 2em auto;
 }
 
 /* Tab Btns and Forms Container */
