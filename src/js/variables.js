@@ -18,6 +18,11 @@ const pastDate = new Date();
 pastDate.setDate(new Date().getDate() - 15);
 export const todayMinusFifteen = pastDate.toISOString().substring(0, 10);
 
+// Location Dropdown
+
+export const locationsMenu = document.getElementById("saved-locations");
+export const locationValues = Array.from(locationsMenu.children);
+
 // Form Inputs
 
 export const locationInput = document.querySelector(".location");
