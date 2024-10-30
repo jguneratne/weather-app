@@ -4,6 +4,12 @@ export const tabBtns = document.querySelectorAll(".tab-btn");
 export const datesDiv = document.querySelector(".dates-div");
 export const forecastDivs = document.querySelectorAll(".forecast-info");
 export const todayForecastDiv = document.querySelector("[data-name='today']");
+export const fifteenForecastDiv = document.querySelector(
+  "[data-name='fifteen']"
+);
+export const historicForecastDiv = document.querySelector(
+  "[data-name='historic']"
+);
 
 // Forecast Data Variables
 export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
@@ -21,10 +27,11 @@ export const todayMinusFifteen = pastDate.toISOString().substring(0, 10);
 // Location Dropdown
 
 export const locationsMenu = document.getElementById("saved-locations");
-export const locationValues = Array.from(locationsMenu.children);
+export const locationValues = [];
 
 // Form Inputs
 
+export const form = document.querySelector(".input-form");
 export const locationInput = document.querySelector(".location");
 export const unitsInput = document.getElementsByName("units");
 export const date1Input = document.querySelector(".start");
