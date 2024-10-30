@@ -3,7 +3,10 @@ import {
   forecastLatitude,
   forecastLongitude,
   displayLocation,
+  locationValues,
 } from "./variables";
+
+import { handleLocationDropdown } from "./location-list";
 
 export async function getLocationName() {
   const requestOptions = {
@@ -38,7 +41,13 @@ export async function getLocationName() {
       ", " +
       locationData.features[0].properties.country;
 
-    console.log(displayLocation.returnedLocation);
+    if (locationValues.includes(displayLocation.returnedLocation)) {
+      return;
+    } else {
+      locationValues.push(displayLocation.returnedLocation);
+      console.log(locationValues);
+      handleLocationDropdown();
+    }
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
   }
