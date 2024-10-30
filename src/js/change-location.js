@@ -1,15 +1,19 @@
-import { location, locationsMenu, locationValues } from "./variables";
+import { location, locationsMenu } from "./variables";
 
-import { getTodayForecast } from "./forecast-data";
+import { fetchForecast } from "./user-input";
 
 export function toggleLocation() {
   locationsMenu.addEventListener("change", () => {
-    locationValues.forEach((value) => {
-      if (value.selected) {
-        location.enteredLocation = value.textContent;
+    const menuOptions = Array.from(locationsMenu);
+
+    for (let option of menuOptions) {
+      option.removeAttribute("selected", true);
+      if (option.selected) {
+        option.setAttribute("selected", true);
+        location.enteredLocation = option.value;
         console.log(location.userLocation);
+        fetchForecast();
       }
-    });
-    getTodayForecast();
+    }
   });
 }
