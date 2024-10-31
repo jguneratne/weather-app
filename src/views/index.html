@@ -63,8 +63,29 @@
               </fieldset>
             </div>
 
+            <div class="dates-div">
+              <div class="date-line">
+                <div class="form-line start-date-line">
+                  <label for="start" form="input-form">Start date:</label>
+
+                  <input
+                    type="date"
+                    id="start"
+                    class="start"
+                    name="start"
+                    value=""
+                  />
+                </div>
+
+                <div class="form-line end-date-line">
+                  <label for="end" form="input-form">End date:</label>
+                  <input type="date" id="end" class="end" name="end" value="" />
+                </div>
+              </div>
+            </div>
+
             <div class="form-line">
-              <button type="button" name="submit-today" class="forecast-btn">
+              <button type="submit" name="submit" class="forecast-btn">
                 Get Forecast
               </button>
             </div>
@@ -78,38 +99,6 @@
           <select name="locations" id="saved-locations">
             <option value="" disabled>--Please add a location--</option>
           </select>
-        </div>
-
-        <div class="dates-div">
-          <h2 class="hist-dates-header">Select Historic Dates:</h2>
-          <div class="date-line">
-            <div class="form-line start-date-line">
-              <label for="start" form="input-form">Start date:</label>
-
-              <input
-                type="date"
-                id="start"
-                class="start"
-                name="start"
-                value=""
-              />
-            </div>
-
-            <div class="form-line end-date-line">
-              <label for="end" form="input-form">End date:</label>
-              <input type="date" id="end" class="end" name="end" value="" />
-            </div>
-          </div>
-          <div class="form-line">
-            <button
-              type="button"
-              form="input-form"
-              name="submit-historic"
-              class="hist-forecast-btn"
-            >
-              Get Historic Forecast
-            </button>
-          </div>
         </div>
 
         <div class="display-info">
