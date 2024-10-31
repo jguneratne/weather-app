@@ -8,8 +8,6 @@ import {
   date1,
   date2Input,
   date2,
-  todayBtn,
-  historicBtn,
   todayForecastDiv,
   fifteenForecastDiv,
   historicForecastDiv,
@@ -18,15 +16,10 @@ import {
 import { getTodayForecast, getHistoricForecast } from "./forecast-data";
 
 export function handleFormSubmit() {
-  todayBtn.addEventListener("pointerdown", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    handleTodayInput();
-    fetchForecast();
-  });
-
-  historicBtn.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    handleHistoricInput();
+    console.log("Click!");
+    handleInput();
     fetchForecast();
   });
 }
@@ -38,6 +31,7 @@ export function fetchForecast() {
   ) {
     console.log("Loading Today...");
     getTodayForecast();
+
     clearLocationField();
   } else if (historicForecastDiv.classList.contains("forecast-info--active")) {
     console.log("Loading Historic...");
@@ -46,20 +40,7 @@ export function fetchForecast() {
   }
 }
 
-function handleTodayInput() {
-  location.enteredLocation = locationInput.value;
-
-  for (let unit of unitsInput) {
-    if (unit.checked) {
-      unitGroup.enteredUnitGroup = unit.value;
-    }
-  }
-
-  // console.log(location.userLocation);
-  // console.log(unitGroup.userUnitGroup);
-}
-
-function handleHistoricInput() {
+function handleInput() {
   location.enteredLocation = locationInput.value;
 
   date1.enteredDate1 = date1Input.value;
@@ -71,10 +52,10 @@ function handleHistoricInput() {
     }
   }
 
-  // console.log(location.userLocation);
-  // console.log(date1.userDate1);
-  // console.log(date2.userDate2);
-  // console.log(unitGroup.userUnitGroup);
+  console.log(location.userLocation);
+  console.log(date1.userDate1);
+  console.log(date2.userDate2);
+  console.log(unitGroup.userUnitGroup);
 }
 
 function clearLocationField() {
