@@ -21,8 +21,8 @@ futureDate.setDate(new Date().getDate() + 15);
 export const todayPlusFifteen = futureDate.toISOString().substring(0, 10);
 
 const pastDate = new Date();
-pastDate.setDate(new Date().getDate() - 15);
-export const todayMinusFifteen = pastDate.toISOString().substring(0, 10);
+pastDate.setDate(new Date().getDate() - 10);
+export const todayMinusTen = pastDate.toISOString().substring(0, 10);
 
 // Location Dropdown
 

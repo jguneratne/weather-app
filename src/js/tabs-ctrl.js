@@ -4,7 +4,7 @@ import {
   date1Input,
   date2Input,
   today,
-  todayMinusFifteen,
+  todayMinusTen,
   forecastDivs,
   todayForecastDiv,
 } from "./variables";
@@ -21,7 +21,7 @@ export function selectForecastTab() {
         }
 
         if (btn.dataset.tab === "historic") {
-          date1Input.value = todayMinusFifteen;
+          date1Input.value = todayMinusTen;
           date2Input.value = today;
           datesDiv.style.display = "initial";
         } else {
