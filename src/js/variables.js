@@ -36,8 +36,6 @@ export const locationInput = document.querySelector(".location");
 export const unitsInput = document.getElementsByName("units");
 export const date1Input = document.querySelector(".start");
 export const date2Input = document.querySelector(".end");
-export const todayBtn = document.querySelector(".forecast-btn");
-export const historicBtn = document.querySelector(".hist-forecast-btn");
 
 // form Input Data
 
