@@ -59,7 +59,8 @@ export async function getHistoricForecast() {
         "?unitGroup=" +
         unitGroup.userUnitGroup +
         "&key=" +
-        key,
+        key +
+        "&include=days",
 
       {
         mode: "cors",
