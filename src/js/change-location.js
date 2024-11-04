@@ -1,6 +1,4 @@
-import { location, locationsMenu } from "./variables";
-
-import { fetchForecast } from "./user-input";
+import { locationsMenu } from "./variables";
 
 export function toggleLocation() {
   locationsMenu.addEventListener("change", () => {
@@ -10,9 +8,6 @@ export function toggleLocation() {
       option.removeAttribute("selected", true);
       if (option.selected) {
         option.setAttribute("selected", true);
-        location.enteredLocation = option.value;
-        console.log(location.userLocation);
-        fetchForecast();
       }
     }
   });
