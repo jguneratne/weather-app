@@ -17,12 +17,12 @@ export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 export const today = new Date().toISOString().substring(0, 10);
 
 const futureDate = new Date();
-futureDate.setDate(new Date().getDate() + 15);
-export const todayPlusFifteen = futureDate.toISOString().substring(0, 10);
+futureDate.setDate(new Date().getDate() + 14);
+export const todayPlusFourteen = futureDate.toISOString().substring(0, 10);
 
 const pastDate = new Date();
-pastDate.setDate(new Date().getDate() - 10);
-export const todayMinusTen = pastDate.toISOString().substring(0, 10);
+pastDate.setDate(new Date().getDate() - 9);
+export const todayMinusNine = pastDate.toISOString().substring(0, 10);
 
 // Location Dropdown
 

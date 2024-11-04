@@ -1,7 +1,7 @@
 import {
   key,
   today,
-  todayPlusFifteen,
+  todayPlusFourteen,
   location,
   unitGroup,
   date1,
@@ -20,7 +20,7 @@ export async function getTodayForecast() {
         "/" +
         today +
         "/" +
-        todayPlusFifteen +
+        todayPlusFourteen +
         "?unitGroup=" +
         unitGroup.userUnitGroup +
         "&key=" +
