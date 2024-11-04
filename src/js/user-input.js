@@ -8,6 +8,7 @@ import {
   date1,
   date2Input,
   date2,
+  locationsMenu,
   todayForecastDiv,
   fifteenForecastDiv,
   historicForecastDiv,
@@ -19,7 +20,6 @@ export function handleFormSubmit() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("Click!");
-    handleInput();
     fetchForecast();
   });
 }
@@ -30,18 +30,29 @@ export function fetchForecast() {
     fifteenForecastDiv.classList.contains("forecast-info--active")
   ) {
     console.log("Loading Today...");
+    handleInput();
     getTodayForecast();
-
     clearLocationField();
   } else if (historicForecastDiv.classList.contains("forecast-info--active")) {
     console.log("Loading Historic...");
+    handleInput();
     getHistoricForecast();
     clearLocationField();
   }
 }
 
 function handleInput() {
-  location.enteredLocation = locationInput.value;
+  if (
+    locationInput.value === "" ||
+    locationInput.value === undefined ||
+    locationInput.value === null
+  ) {
+    location.enteredLocation = locationsMenu.value;
+    console.log(location.userLocation);
+  } else {
+    location.enteredLocation = locationInput.value;
+    console.log(location.userLocation);
+  }
 
   date1.enteredDate1 = date1Input.value;
   date2.enteredDate2 = date2Input.value;
