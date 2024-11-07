@@ -78,7 +78,15 @@ input {
 .loc-dropdown-div {
   max-width: 90%;
   text-align: center;
-  margin: 0 auto 2em auto;
+  margin: 0 auto;
+}
+
+.attr-line {
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  text-align: center;
+  margin: 0.2em auto 2em auto;
 }
 
 /* Tab Btns and Forms Container */
