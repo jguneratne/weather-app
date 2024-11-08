@@ -12,6 +12,8 @@ import {
 
 import { getLocationName } from "./location.js";
 
+import { displayToday } from "./display-forecasts.js";
+
 export async function getTodayForecast() {
   try {
     const response = await fetch(
@@ -29,15 +31,15 @@ export async function getTodayForecast() {
       {
         mode: "cors",
         credentials: "omit",
-      }
+      },
     );
     const todayData = await response.json();
     console.log(todayData);
 
     forecastLatitude.userLatitude = todayData.latitude;
     forecastLongitude.userLongitude = todayData.longitude;
-    console.log(forecastLatitude.latitude);
-    console.log(forecastLongitude.longitude);
+
+    displayToday(todayData);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
   } finally {
@@ -65,7 +67,7 @@ export async function getHistoricForecast() {
       {
         mode: "cors",
         credentials: "omit",
-      }
+      },
     );
     const historicData = await response.json();
     console.log(historicData);
