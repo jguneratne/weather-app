@@ -15,6 +15,7 @@ export const historicForecastDiv = document.querySelector(
 export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 
 export const today = new Date().toISOString().substring(0, 10);
+export const todayOnScreen = new Date().toString().slice(0, 15);
 
 const futureDate = new Date();
 futureDate.setDate(new Date().getDate() + 14);
