@@ -129,6 +129,24 @@ input {
   display: initial;
 }
 
+.data-line {
+  max-width: max-content;
+  margin: 0.8em auto;
+  display: flex;
+  gap: 1em;
+}
+
+.today-min,
+.today-max {
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.today-description {
+  text-align: center;
+  margin: 0.3em;
+}
+
 /* FOOTER */
 
 .footer-div {
