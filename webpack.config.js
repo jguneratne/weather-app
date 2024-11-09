@@ -4,7 +4,6 @@ const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 module.exports = {
   stats: { children: true },
   mode: "development",
-  entry: "./src/js/index.js",
   output: {
     path: path.join(__dirname, "dist/"),
     clean: true,
@@ -14,7 +13,7 @@ module.exports = {
     alias: {
       "@scripts": path.join(__dirname, "src/js"),
       "@styles": path.join(__dirname, "src/styles"),
-      "@images": path.join(__dirname, "src/images"),
+      "@images": path.join(__dirname, "src/assets/imgs"),
     },
   },
 
@@ -41,19 +40,6 @@ module.exports = {
         // output filename for CSS
         filename: "css/[name].[contenthash:8].css",
       },
-
-      preprocessor: "ejs",
-
-      preprocessorOptions: {
-        async: false, // defaults 'false'
-        // defaults process.cwd(), root path for includes with an absolute path (e.g., /file.html)
-        root: path.join(__dirname, "src/views"), // defaults process.cwd()
-        // defaults [], an array of paths to use when resolving includes with relative paths
-        views: [
-          "src/partials", // relative path
-          path.join(__dirname, "src/partials"), // absolute path
-        ],
-      },
     }),
   ],
 
@@ -71,27 +57,28 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|ico|svg)$/,
+        test: /\.(png|jpe?g|ico|webp|avif|svg|)$/,
         type: "asset/resource",
         generator: {
           filename: ({ filename }) => {
             // Keep directory structure for images in dist folder
             const srcPath = "src/assets/imgs";
+
             const regExp = new RegExp(
-              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
+              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`,
             );
             const assetPath = path.dirname(
-              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/")
+              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/"),
             );
 
-            return `imgs/${assetPath}/[name].[hash:8][ext]`;
+            return `imgs/${assetPath}/[name].[contenthash:8][ext]`;
           },
         },
       },
     ],
   },
 
-  // enable HMR with live reload
+  //  enable HMR with live reload
   devServer: {
     static: path.resolve(__dirname, "dist"),
     watchFiles: {
