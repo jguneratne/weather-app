@@ -224,5 +224,5 @@ weatherIconsData.push(
   thunderShowersDayData,
   thunderShowersNightData,
   thunderData,
-  windData
+  windData,
 );
