@@ -15,15 +15,22 @@ export function displayToday(todayData) {
     todayDate.textContent = todayOnScreen;
   }
 
-  weatherIconsData.forEach((icon) => {
-    if (icon.iconName === todayData.days[0].icon) {
-      console.log(icon.image);
-      const weatherIcon = document.createElement("img");
-      weatherIcon.src = icon.img;
-      weatherIcon.setAttribute("alt", icon.iconName + "icon");
-      todayIconDiv.appendChild(weatherIcon);
-    }
-  });
+  const iconName = todayData.days[0].icon;
+  const iconURL = weatherIconsData[iconName];
+
+  // remove old icon
+  if (todayIconDiv.hasChildNodes()) {
+    todayIconDiv.firstChild.remove();
+  }
+
+  // add new icon
+  if (iconURL) {
+    const weatherIcon = document.createElement("img");
+    weatherIcon.src = iconURL;
+    weatherIcon.classList.add("weather-icon");
+    weatherIcon.setAttribute("alt", iconName + "icon");
+    todayIconDiv.appendChild(weatherIcon);
+  }
 
   todayTemp.textContent = todayData.days[0].temp + "°";
 

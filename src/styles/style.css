@@ -167,3 +167,7 @@ input {
 .github-logo {
   max-width: 2em;
 }
+
+.weather-icon {
+  width: 64px;
+}
