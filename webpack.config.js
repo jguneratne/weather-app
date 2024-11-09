@@ -4,6 +4,8 @@ const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 module.exports = {
   stats: { children: true },
   mode: "development",
+  devtool: "source-map",
+
   output: {
     path: path.join(__dirname, "dist/"),
     clean: true,
@@ -16,8 +18,6 @@ module.exports = {
       "@images": path.join(__dirname, "src/assets/imgs"),
     },
   },
-
-  devtool: "source-map",
 
   plugins: [
     new HtmlBundlerPlugin({
