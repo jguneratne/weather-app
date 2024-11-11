@@ -1,22 +1,25 @@
 import { today, todayOnScreen } from "./variables";
 
-import { weatherIconsData } from "./weather-icons";
+import { weatherIcons } from "./weather-icons";
 
 export function displayToday(todayData) {
   const todayDate = document.querySelector(".today-date");
+  const todayDescrip = document.querySelector(".today-description");
   const todayIconDiv = document.querySelector(".today-icon-div");
   const todayTemp = document.querySelector(".today-temp");
   const todayFeelsLike = document.querySelector(".today-feels");
   const todayMin = document.querySelector(".today-min");
   const todayMax = document.querySelector(".today-max");
-  const todayDescrip = document.querySelector(".today-description");
 
   if (today === todayData.days[0].datetime) {
     todayDate.textContent = todayOnScreen;
+    todayDate.style.fontWeight = "bold";
   }
 
+  todayDescrip.textContent = todayData.days[0].description;
+
   const iconName = todayData.days[0].icon;
-  const iconURL = weatherIconsData[iconName];
+  const iconURL = weatherIcons[iconName];
 
   // remove old icon
   if (todayIconDiv.hasChildNodes()) {
@@ -39,6 +42,4 @@ export function displayToday(todayData) {
   todayMin.textContent = todayData.days[0].tempmin + "°";
 
   todayMax.textContent = todayData.days[0].tempmax + "°";
-
-  todayDescrip.textContent = todayData.days[0].description;
 }
