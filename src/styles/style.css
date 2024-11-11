@@ -129,6 +129,10 @@ input {
   display: initial;
 }
 
+.date-descrip-div {
+  margin-bottom: 2em;
+}
+
 .data-line {
   max-width: max-content;
   margin: 0.8em auto;
@@ -136,15 +140,43 @@ input {
   gap: 1em;
 }
 
-.today-min,
-.today-max {
-  max-width: max-content;
-  margin: 0 auto;
+.data-heading {
+  font-weight: bold;
+}
+
+.date-line {
+  margin-bottom: 0;
 }
 
 .today-description {
   text-align: center;
   margin: 0.3em;
+}
+
+.today-icon-div {
+  margin-bottom: 1em;
+}
+
+.min-max-div {
+  display: flex;
+  margin-top: 2em;
+}
+
+.today-min-line,
+.today-max-line {
+  display: flex;
+  flex-direction: column;
+}
+
+.min-heading,
+.max-heading {
+  margin-bottom: -0.6em;
+}
+
+.today-min,
+.today-max {
+  max-width: max-content;
+  margin: 0 auto;
 }
 
 /* FOOTER */
