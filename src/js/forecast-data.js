@@ -12,7 +12,11 @@ import {
 
 import { getLocationName } from "./location.js";
 
-import { displayToday } from "./display-forecasts.js";
+import {
+  displayToday,
+  displayFifteenDay,
+  displayHistoricDays,
+} from "./display-forecasts.js";
 
 export async function getTodayForecast() {
   try {
@@ -40,6 +44,7 @@ export async function getTodayForecast() {
     forecastLongitude.userLongitude = todayData.longitude;
 
     displayToday(todayData);
+    displayFifteenDay(todayData);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
   } finally {
@@ -73,8 +78,7 @@ export async function getHistoricForecast() {
     console.log(historicData);
     forecastLatitude.userLatitude = historicData.latitude;
     forecastLongitude.userLongitude = historicData.longitude;
-    console.log(forecastLatitude.latitude);
-    console.log(forecastLongitude.longitude);
+    displayHistoricDays(historicData);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
   } finally {
