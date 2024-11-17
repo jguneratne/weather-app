@@ -1,14 +1,14 @@
-// Tabls Ctrl Variables
+// Tabs Ctrl Variables
 
 export const tabBtns = document.querySelectorAll(".tab-btn");
 export const datesDiv = document.querySelector(".dates-div");
 export const forecastDivs = document.querySelectorAll(".forecast-info");
 export const todayForecastDiv = document.querySelector("[data-name='today']");
 export const fifteenForecastDiv = document.querySelector(
-  "[data-name='fifteen']"
+  "[data-name='fifteen']",
 );
 export const historicForecastDiv = document.querySelector(
-  "[data-name='historic']"
+  "[data-name='historic']",
 );
 
 // Forecast Data Variables
