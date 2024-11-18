@@ -34,6 +34,7 @@ export const locationValues = [];
 
 export const form = document.querySelector(".input-form");
 export const locationInput = document.querySelector(".location");
+export const inputError = document.querySelector(".input-error");
 export const unitsInput = document.getElementsByName("units");
 export const date1Input = document.querySelector(".start");
 export const date2Input = document.querySelector(".end");
