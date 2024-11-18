@@ -2,6 +2,7 @@ import {
   form,
   locationInput,
   location,
+  inputError,
   unitsInput,
   unitGroup,
   date1Input,
@@ -19,8 +20,15 @@ import { getTodayForecast, getHistoricForecast } from "./forecast-data";
 export function handleFormSubmit() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("Click!");
-    fetchForecast();
+
+    if (!locationInput.value && !locationsMenu.value) {
+      inputError.style.display = "initial";
+      console.log("No location input");
+    } else {
+      inputError.style.display = "none";
+      console.log("Click!");
+      fetchForecast();
+    }
   });
 }
 
@@ -42,11 +50,7 @@ export function fetchForecast() {
 }
 
 function handleInput() {
-  if (
-    locationInput.value === "" ||
-    locationInput.value === undefined ||
-    locationInput.value === null
-  ) {
+  if (!locationInput.value && locationsMenu.value) {
     location.enteredLocation = locationsMenu.value;
     console.log(location.userLocation);
   } else {
