@@ -44,6 +44,18 @@ input {
   margin-top: 0.5em;
 }
 
+.location {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.input-error {
+  color: red;
+  text-align: right;
+  display: none;
+}
+
 .dates-div {
   max-width: 90%;
   display: none;
