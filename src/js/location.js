@@ -26,12 +26,12 @@ export async function getLocationName() {
         requestOptions,
         mode: "cors",
         credentials: "omit",
-      }
+      },
     );
     const locationData = await locationResponse.json();
     console.log(locationData);
     console.log(
-      "Copyright Attribution: OpenStreetMap, openstreetmap.org/copyright"
+      "Copyright Attribution: OpenStreetMap, openstreetmap.org/copyright",
     );
 
     displayLocation.responseLocation =
@@ -44,8 +44,14 @@ export async function getLocationName() {
     if (locationValues.includes(displayLocation.returnedLocation)) {
       return;
     } else {
-      locationValues.push(displayLocation.returnedLocation);
-      console.log(locationValues);
+      // create addLocations variable to retrieve current locationValues and append newest location to older locations
+      const addLocations = JSON.parse(localStorage.getItem("locationValues"));
+      addLocations.push(displayLocation.returnedLocation);
+
+      // set the addLocations variable to locationsValue so old and new locations are in one array
+      localStorage.setItem("locationValues", JSON.stringify(addLocations));
+      console.log(JSON.parse(localStorage.getItem("locationValues")));
+
       handleLocationDropdown();
     }
   } catch (e) {
