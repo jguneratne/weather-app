@@ -28,7 +28,9 @@ export const todayMinusNine = pastDate.toISOString().substring(0, 10);
 // Location Dropdown
 
 export const locationsMenu = document.getElementById("saved-locations");
-export const locationValues = [];
+
+export const locationValues = JSON.parse(localStorage.locationValues || "[]");
+localStorage.setItem("locationValues", JSON.stringify(locationValues));
 
 // Form Inputs
 
