@@ -8,7 +8,10 @@ import { selectForecastTab } from "./tabs-ctrl";
 
 import { handleFormSubmit } from "./user-input";
 
+import { handleLocationDropdown } from "./location-list";
+
 document.addEventListener("DOMContentLoaded", () => {
+  handleLocationDropdown();
   toggleLocation();
   getAndToggleUnits();
   selectForecastTab();
