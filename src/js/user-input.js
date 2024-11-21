@@ -53,7 +53,10 @@ function handleInput() {
   if (!locationInput.value && locationsMenu.value) {
     location.enteredLocation = locationsMenu.value;
     console.log(location.userLocation);
-  } else {
+  } else if (
+    (locationInput.value && !locationsMenu.value) ||
+    (locationInput.value && locationsMenu.value)
+  ) {
     location.enteredLocation = locationInput.value;
     console.log(location.userLocation);
   }
