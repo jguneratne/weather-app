@@ -1,17 +1,29 @@
-import { unitsInput, unitGroup } from "./variables";
+import { unitsInput } from "./variables";
 
 export function getAndToggleUnits() {
-  unitsInput.forEach((input) => {
-    input.addEventListener("change", () => {
-      for (let unit of unitsInput) {
-        if (unit.checked) {
-          unit.setAttribute("checked", true);
-          unitGroup.enteredUnitGroup = unit.value;
-        } else if (!unit.checked) {
-          unit.removeAttribute("checked", true);
-        }
+  if (!JSON.parse(localStorage.getItem("unitValue"))) {
+    localStorage.setItem("unitValue", JSON.stringify("us"));
+    console.log(JSON.parse(localStorage.getItem("unitValue")));
+  } else {
+    unitsInput.value = JSON.parse(localStorage.getItem("unitValue"));
+  }
+
+  for (let unit of unitsInput) {
+    if (JSON.parse(localStorage.getItem("unitValue")) === unit.value) {
+      unit.setAttribute("checked", true);
+    } else {
+      unit.removeAttribute("checked", false);
+    }
+
+    unit.addEventListener("change", () => {
+      if (unit.checked) {
+        localStorage.setItem("unitValue", JSON.stringify(unit.value));
+        unit.setAttribute("checked", true);
+      } else if (!unit.checked) {
+        unit.removeAttribute("checked", true);
       }
-      console.log(unitGroup.userUnitGroup);
     });
-  });
+  }
+
+  console.log(JSON.parse(localStorage.getItem("unitValue")));
 }
