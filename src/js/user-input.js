@@ -4,7 +4,7 @@ import {
   location,
   inputError,
   unitsInput,
-  unitGroup,
+  unitValue,
   date1Input,
   date1,
   date2Input,
@@ -63,14 +63,16 @@ function handleInput() {
 
   for (let unit of unitsInput) {
     if (unit.checked) {
-      unitGroup.enteredUnitGroup = unit.value;
+      unitValue.enteredUnitValue = JSON.parse(
+        localStorage.getItem("unitValue"),
+      );
     }
   }
 
   console.log(location.userLocation);
   console.log(date1.userDate1);
   console.log(date2.userDate2);
-  console.log(unitGroup.userUnitGroup);
+  console.log(unitValue.enteredUnitValue);
 }
 
 function clearLocationField() {
