@@ -3,7 +3,7 @@ import {
   today,
   todayPlusFourteen,
   location,
-  unitGroup,
+  unitValue,
   date1,
   date2,
   forecastLatitude,
@@ -28,7 +28,7 @@ export async function getTodayForecast() {
         "/" +
         todayPlusFourteen +
         "?unitGroup=" +
-        unitGroup.userUnitGroup +
+        unitValue.userUnitValue +
         "&key=" +
         key,
 
@@ -55,6 +55,7 @@ export async function getTodayForecast() {
 export async function getHistoricForecast() {
   console.log(date1.userDate1);
   console.log(date2.userDate2);
+
   try {
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
@@ -64,7 +65,7 @@ export async function getHistoricForecast() {
         "/" +
         date2.userDate2 +
         "?unitGroup=" +
-        unitGroup.userUnitGroup +
+        unitValue.userUnitValue +
         "&key=" +
         key +
         "&include=days",
