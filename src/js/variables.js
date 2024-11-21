@@ -55,15 +55,15 @@ export let location = {
   },
 };
 
-export let unitGroup = {
-  userUnitGroup: "",
+export let unitValue = {
+  userUnitValue: "",
 
-  get enteredUnitGroup() {
-    return this.userUnitGroup;
+  get enteredUnitValue() {
+    return this.userUnitValue;
   },
 
-  set enteredUnitGroup(newUserUnitGroup) {
-    this.userUnitGroup = newUserUnitGroup;
+  set enteredUnitValue(newUserUnitValue) {
+    this.userUnitValue = newUserUnitValue;
   },
 };
 
