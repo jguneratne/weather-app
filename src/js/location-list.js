@@ -1,6 +1,8 @@
-import { locationsMenu, locationValues } from "./variables";
+import { locationsMenu } from "./variables";
 
 export function handleLocationDropdown() {
+  console.log(JSON.parse(localStorage.getItem("locationValues")));
+
   replaceLocationEntries();
   addLocationEntries();
 }
@@ -12,14 +14,16 @@ function addLocationEntries() {
   disabledOption.textContent = "--Please choose a location--";
   locationsMenu.appendChild(disabledOption);
 
-  for (let i = 0; i < locationValues.length; i++) {
+  const menuItems = JSON.parse(localStorage.getItem("locationValues"));
+
+  for (let i = 0; i < menuItems.length; i++) {
     const option = document.createElement("option");
-    option.value = locationValues[i];
-    option.textContent = locationValues[i];
+    option.value = menuItems[i];
+    option.textContent = menuItems[i];
 
     locationsMenu.appendChild(option);
 
-    if (option.value === locationValues[locationValues.length - 1]) {
+    if (option.value === menuItems[menuItems.length - 1]) {
       option.setAttribute("selected", true);
     }
   }
