@@ -10,10 +10,13 @@ import { handleFormSubmit } from "./user-input";
 
 import { handleLocationDropdown } from "./location-list";
 
+import { editLocationList } from "./location-edit-form";
+
 document.addEventListener("DOMContentLoaded", () => {
   handleLocationDropdown();
   toggleLocation();
   getAndToggleUnits();
   selectForecastTab();
   handleFormSubmit();
+  editLocationList();
 });
