@@ -47,7 +47,7 @@ input {
 .location {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0.5em auto 0 auto;
 }
 
 .input-error {
@@ -93,12 +93,72 @@ input {
   margin: 0 auto;
 }
 
+.display-locs {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  justify-content: center;
+}
+
+.edit-btn-img {
+  grid-area: 1 / 1 / 2 / 2;
+  max-width: 1.1em;
+  margin: 0.5em 0.5em 0 -0.5em;
+}
+
+.saved-locations {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-top: 0.5em;
+}
+
 .attr-line {
   display: flex;
   flex-direction: column;
   max-width: max-content;
+  text-align: right;
+  margin: 0.2em 2em 2em auto;
+}
+
+/* Edit Locations Box */
+
+.loc-edit-box {
+  width: 90%;
+  position: absolute;
+  margin-top: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   text-align: center;
-  margin: 0.2em auto 2em auto;
+  background-color: white;
+  border: 1px solid red;
+
+  display: none;
+}
+
+.edit-form {
+  margin: 1em auto;
+  border: none;
+}
+
+.instruct {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+}
+
+.edit-menu {
+  border: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+.options {
+  font-size: 1rem;
+  margin-bottom: 0.3em;
+}
+
+.rmv-btn {
+  padding: 0.5em 1em;
+  border-radius: 1em;
 }
 
 /* Tab Btns and Forms Container */
