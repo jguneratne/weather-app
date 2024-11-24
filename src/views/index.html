@@ -15,6 +15,15 @@
         <h1>Weather App</h1>
       </header>
       <main>
+        <div class="loc-edit-box">
+          <form
+            class="edit-form"
+            id="edit-form"
+            edit-locations="edit-locations"
+            action="#"
+          ></form>
+        </div>
+
         <div class="form-div" data-form="input">
           <form class="input-form" id="input-form" action="#" novalidate>
             <div class="form-line">
@@ -37,9 +46,20 @@
               <label for="saved-locations" form="input-form"
                 >Your Saved Locations:</label
               >
-              <select name="locations" id="saved-locations">
-                <option value="" disabled>--Please add a location--</option>
-              </select>
+              <div class="display-locs">
+                <img
+                  class="edit-btn-img"
+                  src="@images/icons/edit-button-svgrepo-com.svg"
+                  alt="Edit Locations Button"
+                />
+                <select
+                  name="locations"
+                  class="saved-locations"
+                  id="saved-locations"
+                >
+                  <option value="" disabled>--Please add a location--</option>
+                </select>
+              </div>
             </div>
             <div class="attr-line">
               <span class="loc-attr">Location Data from </span>
