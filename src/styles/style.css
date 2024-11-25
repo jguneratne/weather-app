@@ -99,10 +99,17 @@ input {
   justify-content: center;
 }
 
-.edit-btn-img {
+.edit-btn {
+  max-width: min-content;
   grid-area: 1 / 1 / 2 / 2;
-  max-width: 1.1em;
   margin: 0.5em 0.5em 0 -0.5em;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+}
+
+.edit-btn-img {
+  max-width: 1.1em;
 }
 
 .saved-locations {
@@ -135,8 +142,25 @@ input {
   display: none;
 }
 
+.cancel-div {
+  text-align: right;
+  max-width: 95%;
+  margin: 0.5em 0;
+}
+
+.cancel-btn {
+  max-width: min-content;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+}
+
+.cancel-btn-img {
+  width: 1.5em;
+}
+
 .edit-form {
-  margin: 1em auto;
+  margin: 0 auto 1em auto;
   border: none;
 }
 
