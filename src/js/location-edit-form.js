@@ -10,6 +10,17 @@ export function editLocationList() {
 
       const editForm = document.querySelector(".edit-form");
 
+      const cancelDiv = document.createElement("div");
+      cancelDiv.setAttribute("class", "cancel-div");
+
+      const cancelBtn = document.createElement("button");
+      cancelBtn.setAttribute("class", "cancel-btn");
+
+      const cancelIcon = document.createElement("img");
+      cancelIcon.setAttribute("class", "cancel-btn-img");
+      cancelIcon.src = require("@images/icons/cancel-close-svgrepo-com.svg");
+      cancelIcon.alt = "Close Window Button";
+
       const instruct = document.createElement("p");
       instruct.setAttribute("class", "instruct");
       instruct.textContent = "Select location to remove:";
@@ -27,24 +38,37 @@ export function editLocationList() {
       selectMenu.setAttribute("name", "edit-menu");
       selectMenu.setAttribute("class", "edit-menu");
 
+      while (editForm.firstChild) {
+        editForm.removeChild(editForm.firstChild);
+      }
+
       for (let i = 0; i < menuLocales.length; i++) {
         const option = document.createElement("option");
         option.value = menuLocales[i];
         option.textContent = menuLocales[i];
         option.setAttribute("class", "options");
 
+        editForm.appendChild(cancelDiv);
+        cancelDiv.appendChild(cancelBtn);
+        cancelBtn.appendChild(cancelIcon);
         editForm.appendChild(instruct);
         editForm.appendChild(selectMenu);
         selectMenu.appendChild(option);
         editForm.appendChild(removeBtn);
       }
 
+      let locToRemove = "";
+
       selectMenu.addEventListener("pointerdown", (e) => {
-        const locToRemove = e.target.value;
+        locToRemove = e.target.value;
+      });
 
-        removeBtn.addEventListener("pointerdown", (e) => {
-          e.preventDefault;
+      editFormDiv.addEventListener("pointerdown", (e) => {
+        if (e.target === cancelIcon) {
+          editFormDiv.style.display = "none";
+        }
 
+        if (e.target === removeBtn) {
           // create removeLocation variable to retrieve duplicate entered location and remove from locationValues
           const removeLocation = JSON.parse(
             localStorage.getItem("locationValues"),
@@ -61,7 +85,7 @@ export function editLocationList() {
           handleLocationDropdown();
 
           editFormDiv.style.display = "none";
-        });
+        }
       });
     }
   });
