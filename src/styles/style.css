@@ -121,7 +121,7 @@ input {
 /* Locations Drop-Down */
 
 .loc-dropdown-div {
-  max-width: 90%;
+  max-width: min-content;
   text-align: center;
   margin: 0 auto;
 }
@@ -155,7 +155,7 @@ input {
   flex-direction: column;
   max-width: max-content;
   text-align: right;
-  margin: 0.2em 2em 2em auto;
+  margin: 0.2em 0 2em auto;
 }
 
 /* Edit Locations Box */
