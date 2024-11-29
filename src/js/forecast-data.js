@@ -1,4 +1,5 @@
 import {
+  loader,
   key,
   today,
   todayPlusFourteen,
@@ -20,6 +21,8 @@ import {
 
 export async function getTodayForecast() {
   try {
+    loader.style.display = "initial";
+
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
         location.userLocation +
@@ -43,6 +46,7 @@ export async function getTodayForecast() {
     forecastLatitude.userLatitude = todayData.latitude;
     forecastLongitude.userLongitude = todayData.longitude;
 
+    loader.style.display = "none";
     displayToday(todayData);
     displayFifteenDay(todayData);
   } catch (e) {
@@ -53,6 +57,7 @@ export async function getTodayForecast() {
 }
 
 export async function getHistoricForecast() {
+  loader.style.display = "initial";
   console.log(date1.userDate1);
   console.log(date2.userDate2);
 
@@ -77,6 +82,7 @@ export async function getHistoricForecast() {
     );
     const historicData = await response.json();
     console.log(historicData);
+    loader.style.display = "none";
     forecastLatitude.userLatitude = historicData.latitude;
     forecastLongitude.userLongitude = historicData.longitude;
     displayHistoricDays(historicData);

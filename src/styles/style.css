@@ -21,6 +21,39 @@ header {
   text-align: center;
 }
 
+/* Loading Animation */
+
+.loader-div {
+  width: 90%;
+  position: absolute;
+  margin-top: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+
+.loader {
+  margin: auto;
+  border: 0.8em solid #e2e6ec;
+  border-radius: 50%;
+  border-top: 0.8em solid #ff7a59;
+  width: 6em;
+  height: 6em;
+  animation: spinner 2.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* FORM */
 
 .form-div {

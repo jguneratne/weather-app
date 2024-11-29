@@ -11,6 +11,9 @@ export const historicForecastDiv = document.querySelector(
   "[data-name='historic']",
 );
 
+// Loading Animation
+export const loader = document.querySelector(".loader-div");
+
 // Forecast Data Variables
 export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";
 
