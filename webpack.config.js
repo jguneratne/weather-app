@@ -16,6 +16,7 @@ module.exports = {
       "@scripts": path.join(__dirname, "src/js"),
       "@styles": path.join(__dirname, "src/styles"),
       "@images": path.join(__dirname, "src/assets/imgs"),
+      "@fonts": path.join(__dirname, "src/assets/fonts"),
     },
   },
 
@@ -55,6 +56,24 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /[\\/]fonts|node_modules[\\/].+(woff(2)?|ttf|otf|eot|svg)$/i,
+        type: "asset/resource",
+        generator: {
+          // keep original directory structure
+          filename: ({ filename }) => {
+            const srcPath = "src/assets/fonts";
+            const regExp = new RegExp(
+              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`,
+            );
+            const assetPath = path.dirname(
+              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/"),
+            );
+
+            return `fonts/${assetPath}/[name][ext][query]`;
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|ico|webp|avif|svg|)$/,
