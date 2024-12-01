@@ -162,7 +162,7 @@ header > h1 {
 .form-div {
   margin-top: 1em;
   width: 90%;
-  max-width: 40em;
+  max-width: 50em;
   margin: 1.5em auto 2em auto;
   border: 1px solid var(--section-border-col);
   border-radius: 0.6em;
@@ -189,7 +189,6 @@ input {
   flex-direction: column;
   margin: 0.5em auto 0 auto;
   padding-left: 0.5em;
-  color: var(--white);
 }
 
 .input-error {
@@ -263,7 +262,6 @@ input {
 .saved-locations {
   grid-area: 1 / 2 / 2 / 3;
   margin-top: 0.5em;
-  color: var(--white);
 }
 
 .attr-line {
@@ -351,7 +349,7 @@ input {
   grid-template-columns: min-content auto;
   grid-template-rows: 1fr;
   width: 90%;
-  max-width: 40em;
+  max-width: 50em;
   margin: 0 auto 3em auto;
 }
 
@@ -395,19 +393,29 @@ input {
 }
 
 .forecast-info--active {
-  display: initial;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
 }
 
 .forecast-card {
   background-color: var(--forecast-card-col);
+  width: 90%;
+  max-width: 12em;
   border: 1px solid transparent;
   border-radius: 0.6em;
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 
 .date-descrip-div,
 .date-div {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+}
+
+.today-date,
+.date {
+  font-size: 1.2rem;
 }
 
 .data-line {
@@ -420,10 +428,11 @@ input {
 
 .data-heading {
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .date-line {
-  margin-bottom: 0;
+  margin-bottom: 2em;
 }
 
 .today-description {
@@ -433,12 +442,17 @@ input {
 
 .today-icon-div,
 .icon-div {
-  margin: 2em auto;
+  margin: 1em auto;
+}
+
+.weather-icon {
+  width: 4em;
+  min-height: 4em;
 }
 
 .min-max-div {
   display: flex;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .today-min-line,
@@ -451,6 +465,7 @@ input {
 
 .min-heading,
 .max-heading {
+  font-size: 1.2rem;
   margin-bottom: -0.6em;
 }
 
@@ -490,8 +505,4 @@ input {
 
 .github-logo {
   max-width: 2em;
-}
-
-.weather-icon {
-  width: 64px;
 }
