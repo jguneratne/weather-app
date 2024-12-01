@@ -1,6 +1,8 @@
 // Tabs Ctrl Variables
 
+export const tabBtnsDiv = document.querySelector(".btns-div");
 export const tabBtns = document.querySelectorAll(".tab-btn");
+export const todayTabBtn = document.querySelector(".today-btn");
 export const datesDiv = document.querySelector(".dates-div");
 export const forecastDivs = document.querySelectorAll(".forecast-info");
 export const todayForecastDiv = document.querySelector("[data-name='today']");
