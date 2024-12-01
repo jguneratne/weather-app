@@ -1,3 +1,13 @@
+/* COLORS */
+:root {
+  --head-foot-col: #b8c5c5;
+  --main-col: #d8e9f1;
+  --section-col: #c3c6c8;
+  --section-border-col: #b5adad;
+}
+
+/* FONTS */
+
 /* poppins-300 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -62,6 +72,10 @@ body {
   min-height: 100vh;
 }
 
+main {
+  background-color: var(--main-col);
+}
+
 .container {
   min-height: 100vh;
 
@@ -97,6 +111,7 @@ select,
 header {
   padding: 0.5em;
   text-align: center;
+  background-color: var(--head-foot-col);
 }
 
 header > h1 {
@@ -144,7 +159,9 @@ header > h1 {
   width: 90%;
   max-width: 40em;
   margin: 1.5em auto 2em auto;
-  border: 1px solid black;
+  border: 1px solid var(--section-border-col);
+  border-radius: 0.6em;
+  background-color: var(--section-col);
 }
 
 .form-line {
@@ -165,6 +182,7 @@ input {
   display: flex;
   flex-direction: column;
   margin: 0.5em auto 0 auto;
+  padding-left: 0.5em;
 }
 
 .input-error {
@@ -181,13 +199,19 @@ input {
 .date-line {
   display: flex;
   justify-content: center;
-  gap: 1.5em;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .start-date-line,
 .end-date-line {
   display: flex;
   flex-direction: column;
+}
+
+.start,
+.end {
+  text-align: center;
 }
 
 .buttons-line {
@@ -334,15 +358,22 @@ input {
   min-height: 3em;
   font-size: 1rem;
   padding: 0.3em 0.6em;
-  border: 0.1em solid black;
-  border-right: 0.1em solid transparent;
+  border: 0.1em solid var(--section-border-col);
+  border-right: none;
   border-radius: 0.6em 0 0 0.6em;
 }
 
+.tab-btn--active {
+  background-color: var(--section-col);
+}
+
 .forecast-info {
-  border: 0.1em solid black;
   grid-area: 1 / 2 / 2 / 3;
   padding: 0.5em;
+  background-color: var(--section-col);
+  border: 0.1em solid var(--section-border-col);
+  border-left: none;
+  border-radius: 0 0.6em 0.6em 0.6em;
   display: none;
 }
 
@@ -420,6 +451,7 @@ input {
   justify-content: center;
   align-items: center;
   padding: 0.5em;
+  background-color: var(--head-foot-col);
 }
 
 .copyright-div {
