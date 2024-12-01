@@ -1,9 +1,10 @@
 /* COLORS */
 :root {
-  --head-foot-col: #b8c5c5;
+  --head-foot-col: #527b7b;
   --main-col: #d8e9f1;
-  --section-col: #c3c6c8;
+  --section-col: #387e9f;
   --section-border-col: #b5adad;
+  --white: #ffffff;
 }
 
 /* FONTS */
@@ -92,6 +93,8 @@ label,
 legend {
   font-family: "Poppins";
   font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--white);
 }
 
 input,
@@ -117,6 +120,7 @@ header {
 header > h1 {
   font-family: "Poppins";
   font-weight: 400;
+  color: var(--white);
 }
 
 /* Loading Animation */
@@ -172,6 +176,7 @@ header > h1 {
 fieldset {
   border: 0.4em solid transparent;
   margin-top: 1em;
+  color: var(--white);
 }
 
 input {
@@ -183,6 +188,7 @@ input {
   flex-direction: column;
   margin: 0.5em auto 0 auto;
   padding-left: 0.5em;
+  color: var(--white);
 }
 
 .input-error {
@@ -250,12 +256,13 @@ input {
 }
 
 .edit-btn-img {
-  max-width: 1.1em;
+  width: 1.5em;
 }
 
 .saved-locations {
   grid-area: 1 / 2 / 2 / 3;
   margin-top: 0.5em;
+  color: var(--white);
 }
 
 .attr-line {
@@ -264,10 +271,16 @@ input {
   max-width: max-content;
   text-align: right;
   margin: 0.6em 0 2em auto;
+  color: var(--white);
 }
 
 .loc-attr {
   margin-top: -0.4em;
+}
+
+.loc-attr > a {
+  color: var(--white);
+  cursor: pointer;
 }
 
 /* Edit Locations Box */
@@ -354,17 +367,20 @@ input {
 .historic-btn {
   font-family: "Poppins";
   font-weight: 600;
+  font-size: 1rem;
   max-width: 10ch;
   min-height: 3em;
-  font-size: 1rem;
+  background-color: var(--white);
+  color: var(--section-col);
   padding: 0.3em 0.6em;
-  border: 0.1em solid var(--section-border-col);
+  border: 0.1em solid var(--section-col);
   border-right: none;
   border-radius: 0.6em 0 0 0.6em;
 }
 
 .tab-btn--active {
   background-color: var(--section-col);
+  color: var(--white);
 }
 
 .forecast-info {
@@ -391,6 +407,7 @@ input {
   margin: 0.8em auto;
   display: flex;
   gap: 1em;
+  color: var(--white);
 }
 
 .data-heading {
@@ -459,6 +476,7 @@ input {
 }
 
 .my-copyright {
+  color: var(--white);
   margin-right: 1em;
 }
 
