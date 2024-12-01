@@ -54,6 +54,9 @@ export function displayFifteenDay(todayData) {
   const fifteenDay = todayData.days;
   console.log(fifteenDay);
   fifteenDay.forEach((day) => {
+    const forecastCard = document.createElement("div");
+    forecastCard.classList = "forecast-card";
+
     const dateLine = document.createElement("div");
     dateLine.classList = "data-line date-line";
 
@@ -86,10 +89,6 @@ export function displayFifteenDay(todayData) {
 
     const maxTemp = document.createElement("p");
     maxTemp.classList = "max";
-
-    const divider = document.createElement("p");
-    divider.classList = "divider";
-    divider.textContent = "___________________";
 
     const dateContent = new Date(day.datetime).toString().slice(0, 15);
     console.log(dateContent);
@@ -109,17 +108,17 @@ export function displayFifteenDay(todayData) {
     minTemp.textContent = day.tempmin;
     maxTemp.textContent = day.tempmax;
 
-    fifteenForecastDiv.appendChild(dateLine);
+    fifteenForecastDiv.appendChild(forecastCard);
+    forecastCard.appendChild(dateLine);
     dateLine.appendChild(date);
-    fifteenForecastDiv.appendChild(iconDiv);
-    fifteenForecastDiv.appendChild(minMaxDiv);
+    forecastCard.appendChild(iconDiv);
+    forecastCard.appendChild(minMaxDiv);
     minMaxDiv.appendChild(minLine);
     minLine.appendChild(minHeading);
     minLine.appendChild(minTemp);
     minMaxDiv.appendChild(maxLine);
     maxLine.appendChild(maxHeading);
     maxLine.appendChild(maxTemp);
-    fifteenForecastDiv.appendChild(divider);
   });
 }
 
@@ -128,6 +127,9 @@ export function displayHistoricDays(historicData) {
 
   const historicDays = historicData.days;
   historicDays.forEach((day) => {
+    const forecastCard = document.createElement("div");
+    forecastCard.classList = "forecast-card";
+
     const dateLine = document.createElement("div");
     dateLine.classList = "data-line date-line";
 
@@ -161,10 +163,6 @@ export function displayHistoricDays(historicData) {
     const maxTemp = document.createElement("p");
     maxTemp.classList = "max";
 
-    const divider = document.createElement("p");
-    divider.classList = "divider";
-    divider.textContent = "___________________";
-
     const dateContent = new Date(day.datetime).toString().slice(0, 15);
     console.log(dateContent);
     date.textContent = dateContent;
@@ -183,17 +181,17 @@ export function displayHistoricDays(historicData) {
     minTemp.textContent = day.tempmin;
     maxTemp.textContent = day.tempmax;
 
-    historicForecastDiv.appendChild(dateLine);
+    historicForecastDiv.appendChild(forecastCard);
+    forecastCard.appendChild(dateLine);
     dateLine.appendChild(date);
-    historicForecastDiv.appendChild(iconDiv);
-    historicForecastDiv.appendChild(minMaxDiv);
+    forecastCard.appendChild(iconDiv);
+    forecastCard.appendChild(minMaxDiv);
     minMaxDiv.appendChild(minLine);
     minLine.appendChild(minHeading);
     minLine.appendChild(minTemp);
     minMaxDiv.appendChild(maxLine);
     maxLine.appendChild(maxHeading);
     maxLine.appendChild(maxTemp);
-    historicForecastDiv.appendChild(divider);
   });
 }
 

@@ -4,6 +4,7 @@
   --main-col: #d8e9f1;
   --section-col: #387e9f;
   --section-border-col: #b5adad;
+  --forecast-card-col: rgba(227, 232, 228, 0.2);
   --white: #ffffff;
 }
 
@@ -395,6 +396,13 @@ input {
 
 .forecast-info--active {
   display: initial;
+}
+
+.forecast-card {
+  background-color: var(--forecast-card-col);
+  border: 1px solid transparent;
+  border-radius: 0.6em;
+  margin-bottom: 1em;
 }
 
 .date-descrip-div,
