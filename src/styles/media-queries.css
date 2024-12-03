@@ -1,0 +1,13 @@
+@media (min-width: 400px) {
+  .temp-feel-div,
+  .min-max-div {
+    gap: 3em;
+  }
+}
+
+@media (min-width: 500px) {
+  .temp-feel-div,
+  .min-max-div {
+    gap: 4.2em;
+  }
+}
