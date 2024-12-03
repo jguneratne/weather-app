@@ -395,17 +395,21 @@ input {
 .forecast-info--active {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 1em;
 }
 
 .forecast-card {
   background-color: var(--forecast-card-col);
   width: 90%;
-  max-width: 12em;
+  max-width: 13.6em;
   border: 1px solid transparent;
   border-radius: 0.6em;
   margin: 1em 0;
+}
+
+.today-forecast-card {
+  max-width: 20em;
 }
 
 .date-descrip-div,
@@ -416,6 +420,7 @@ input {
 .today-date,
 .date {
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .data-line {
@@ -431,8 +436,14 @@ input {
   font-size: 1.2rem;
 }
 
+.today-date-line {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
 .date-line {
   margin-bottom: 2em;
+  text-align: center;
 }
 
 .today-description {
@@ -450,9 +461,26 @@ input {
   min-height: 4em;
 }
 
+.temp-feel-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.temp-line {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+}
+
 .min-max-div {
   display: flex;
-  margin-top: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+  margin: 3em 0 2em 0;
 }
 
 .today-min-line,
@@ -461,6 +489,7 @@ input {
 .max-line {
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 .min-heading,

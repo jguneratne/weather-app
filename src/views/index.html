@@ -7,6 +7,7 @@
     <title><%= title %></title>
     <link href="@images/favicon.svg" rel="icon" />
     <link href="@styles/style.css" rel="stylesheet" />
+    <link href="@styles/media-queries.css" rel="stylesheet" />
     <script src="@scripts/index.js" defer="defer"></script>
   </head>
   <body>
@@ -163,10 +164,10 @@
           </div>
 
           <div class="forecast-info" data-name="today">
-            <div class="forecast-card">
+            <div class="forecast-card today-forecast-card">
               <div class="date-div">
-                <div class="data-line date-line">
-                  <p class="today-date">- - -</p>
+                <div class="data-line today-date-line">
+                  <p class="today-date">Get Forecast Above</p>
                 </div>
                 <div class="data-line">
                   <p class="today-description">- - -</p>
@@ -175,14 +176,16 @@
 
               <div class="data-line today-icon-div"></div>
 
-              <div class="data-line">
-                <p class="data-heading">Temp:</p>
-                <p class="today-temp">- - -</p>
-              </div>
+              <div class="temp-feel-div">
+                <div class="data-line temp-line">
+                  <p class="data-heading">Temp:</p>
+                  <p class="today-temp">- - -</p>
+                </div>
 
-              <div class="data-line">
-                <p class="data-heading">Feels Like:</p>
-                <p class="today-feels">- - -</p>
+                <div class="data-line temp-line">
+                  <p class="data-heading">Feel:</p>
+                  <p class="today-feels">- - -</p>
+                </div>
               </div>
 
               <div class="min-max-div">
@@ -202,7 +205,7 @@
           <div class="forecast-info" data-name="fifteen">
             <div class="forecast-card">
               <div class="data-line date-line">
-                <p class="date">---</p>
+                <p class="date">Get Forecast Above</p>
               </div>
 
               <div class="data-line icon-div"></div>
