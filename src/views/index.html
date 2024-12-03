@@ -31,53 +31,55 @@
 
         <div class="form-div" data-form="input">
           <form class="input-form" id="input-form" action="#" novalidate>
-            <div class="form-line">
-              <label for="location">Enter Location: </label>
+            <div class="location-div">
+              <div class="form-line location-input-line">
+                <label for="location">Enter Location: </label>
 
-              <input
-                type="text"
-                id="location"
-                name="location"
-                class="location"
-                required
-                minlength="2"
-                size="30"
-                autocomplete="off"
-              />
-              <span class="input-error">Please enter a location.</span>
-            </div>
-
-            <div class="form-line loc-dropdown-div">
-              <label for="saved-locations" form="input-form"
-                >Your Saved Locations:</label
-              >
-              <div class="display-locs">
-                <button class="edit-btn">
-                  <img
-                    class="edit-btn-img"
-                    src="@images/icons/edit-button-svgrepo-com.svg"
-                    alt="Edit Locations Button"
-                  />
-                </button>
-
-                <select
-                  name="locations"
-                  class="saved-locations"
-                  id="saved-locations"
-                >
-                  <option value="" disabled>--Please add a location--</option>
-                </select>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  class="location"
+                  required
+                  minlength="2"
+                  size="30"
+                  autocomplete="off"
+                />
+                <span class="input-error">Please enter a location.</span>
               </div>
-              <div class="attr-line">
-                <span class="loc-attr">Location Data from </span>
-                <span class="loc-attr">
-                  <a
-                    href="http://www.openstreetmap.org/copyright"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Open Street Map</a
-                  ></span
+
+              <div class="form-line loc-dropdown-div">
+                <label for="saved-locations" form="input-form"
+                  >Your Saved Locations:</label
                 >
+                <div class="display-locs">
+                  <button class="edit-btn">
+                    <img
+                      class="edit-btn-img"
+                      src="@images/icons/edit-button-svgrepo-com.svg"
+                      alt="Edit Locations Button"
+                    />
+                  </button>
+
+                  <select
+                    name="locations"
+                    class="saved-locations"
+                    id="saved-locations"
+                  >
+                    <option value="" disabled>--Please add a location--</option>
+                  </select>
+                </div>
+                <div class="attr-line">
+                  <span class="loc-attr">Location Data from </span>
+                  <span class="loc-attr">
+                    <a
+                      href="http://www.openstreetmap.org/copyright"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Open Street Map</a
+                    ></span
+                  >
+                </div>
               </div>
             </div>
 
@@ -208,7 +210,7 @@
                 <p class="date">Get Forecast Above</p>
               </div>
 
-              <div class="data-line icon-div"></div>
+              <div class="data-line icon-div">- - -</div>
 
               <div class="min-max-div">
                 <div class="data-line min-line">
@@ -230,7 +232,7 @@
                 <p class="date">Choose Dates Above</p>
               </div>
 
-              <div class="data-line icon-div"></div>
+              <div class="data-line icon-div">- - -</div>
 
               <div class="min-max-div">
                 <div class="data-line min-line">
