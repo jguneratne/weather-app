@@ -74,15 +74,20 @@ body {
   min-height: 100vh;
 }
 
-main {
-  background-color: var(--main-col);
-}
-
 .container {
   min-height: 100vh;
 
   display: grid;
   grid-template-rows: min-content auto min-content;
+}
+
+main {
+  background-color: var(--main-col);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4em;
+  padding: 3em 2em;
 }
 
 .data-line {
@@ -160,10 +165,10 @@ header > h1 {
 /* FORM */
 
 .form-div {
-  margin-top: 1em;
-  width: 90%;
-  max-width: 50em;
-  margin: 1.5em auto 2em auto;
+  width: 50%;
+  min-width: 20em;
+  max-width: 40em;
+  max-height: min-content;
   border: 1px solid var(--section-border-col);
   border-radius: 0.6em;
   background-color: var(--section-col);
@@ -188,6 +193,8 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  gap: 1em;
+  padding: 0 1em;
   margin-top: 2em;
 }
 
@@ -372,9 +379,10 @@ input {
   display: grid;
   grid-template-columns: min-content auto;
   grid-template-rows: 1fr;
-  width: 90%;
-  max-width: 50em;
-  margin: 0 auto 3em auto;
+  width: 50%;
+  min-width: 20em;
+  max-width: 40em;
+  max-height: min-content;
 }
 
 .btns-div {
