@@ -132,14 +132,15 @@ header > h1 {
 /* Loading Animation */
 
 .loader-div {
-  width: 90%;
   position: absolute;
   margin-top: 4em;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
+  padding: 1em;
   text-align: center;
+  max-width: min-content;
+  border-radius: 0.4em;
+  background-color: rgba(181, 173, 173, 0.8);
   display: none;
 }
 
