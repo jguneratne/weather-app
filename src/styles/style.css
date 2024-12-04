@@ -239,8 +239,22 @@ input {
 }
 
 .forecast-btn {
-  padding: 0.5em;
-  margin-top: 1.5em;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-size: 1.1rem;
+  background: white;
+  border: 1px solid var(--white);
+  outline: 1px solid var(--white);
+  border-radius: 0.4em;
+}
+
+.forecast-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--white);
+  background-color: var(--head-foot-col);
+  border: 1px solid var(--white);
+  outline: 1px solid var(--white);
 }
 
 /* Locations Drop-Down */
