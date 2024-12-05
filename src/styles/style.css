@@ -207,7 +207,16 @@ input {
   display: flex;
   flex-direction: column;
   margin: 0.5em auto 0 auto;
-  padding-left: 0.5em;
+  padding: 0.1em 0.5em;
+  background-color: var(--main-col);
+  outline: 3px solid transparent;
+  border: 3px solid transparent;
+  border-radius: 0.2em;
+}
+
+.location:focus {
+  border: 3px solid var(--section-border-col);
+  outline: 3px solid var(--white);
 }
 
 .input-error {
@@ -243,7 +252,42 @@ input {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 1em;
+  gap: 2em;
+}
+
+.radio-btn {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  appearance: none;
+  background-color: var(--main-col);
+  outline: none;
+}
+
+input[type="radio"]:not(:disabled):checked {
+  border-color: var(--white);
+  background-color: #ff7a59;
+  background-clip: content-box;
+  padding: 0.3em;
+  background-image: radial-gradient(
+    circle,
+    #ff7a59 0%,
+    #ff7a59 50%,
+    transparent 60%,
+    transparent 100%
+  );
+}
+
+.fahrenheit,
+.metric {
+  margin-top: 0.4em;
 }
 
 .forecast-btn {
@@ -294,6 +338,16 @@ input {
 .saved-locations {
   grid-area: 1 / 2 / 2 / 3;
   margin-top: 0.5em;
+  padding: 0.1em 0.5em;
+  background-color: var(--main-col);
+  outline: 3px solid transparent;
+  border: 3px solid transparent;
+  border-radius: 0.2em;
+}
+
+.saved-locations:focus {
+  border: 3px solid var(--section-border-col);
+  outline: 3px solid var(--white);
 }
 
 .attr-line {
