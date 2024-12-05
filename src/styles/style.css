@@ -326,9 +326,21 @@ input[type="radio"]:not(:disabled):checked {
   max-width: min-content;
   grid-area: 1 / 1 / 2 / 2;
   margin: 0.5em 0.5em 0 -0.5em;
+  padding: 0.3em;
   background-color: transparent;
   border: 1px solid transparent;
   outline: 1px solid transparent;
+}
+
+.edit-btn:hover {
+  cursor: pointer;
+  border: 1px solid var(--white);
+  border-radius: 0.2em;
+}
+
+.edit-btn:focus {
+  border: 1px solid var(--white);
+  border-radius: 0.2em;
 }
 
 .edit-btn-img {
@@ -372,23 +384,34 @@ input[type="radio"]:not(:disabled):checked {
 
 .loc-edit-box {
   width: 90%;
+  max-width: 30em;
   position: absolute;
   margin-top: 4em;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  text-align: center;
-  background-color: white;
-  border: 1px solid red;
+  border: 8px solid var(--white);
+  border-radius: 0.3em;
+  background-color: var(--head-foot-col);
 
   display: none;
 }
 
+.edit-form {
+  width: 85%;
+  margin: 1em auto;
+  border: none;
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cancel-div {
-  text-align: right;
-  max-width: 95%;
-  margin: 0.5em 0;
+  align-self: flex-end;
+  max-width: min-content;
 }
 
 .cancel-btn {
@@ -396,26 +419,44 @@ input[type="radio"]:not(:disabled):checked {
   background-color: transparent;
   border: 1px solid transparent;
   outline: 1px solid transparent;
+  padding: 0.3em;
+}
+
+.cancel-btn:focus {
+  border: 1px solid var(--white);
+  border-radius: 0.2em;
+}
+
+.cancel-btn:hover {
+  cursor: pointer;
+  border: 1px solid var(--white);
+  border-radius: 0.2em;
 }
 
 .cancel-btn-img {
   width: 1.5em;
 }
 
-.edit-form {
-  margin: 0 auto 1em auto;
-  border: none;
-}
-
 .instruct {
   font-size: 1.2rem;
-  margin-bottom: 1em;
 }
 
 .edit-menu {
   border: none;
-  padding: 0.5em;
-  margin-bottom: 1em;
+  margin: 1em 0;
+  background-color: var(--head-foot-col);
+  color: var(--white);
+  padding: 1em;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+}
+
+.edit-menu:focus {
+  border: 1px solid var(--white);
+}
+
+.edit-menu:hover {
+  cursor: pointer;
 }
 
 .options {
@@ -425,7 +466,25 @@ input[type="radio"]:not(:disabled):checked {
 
 .rmv-btn {
   padding: 0.5em 1em;
-  border-radius: 1em;
+  margin-bottom: 2em;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid var(--white);
+  outline: 1px solid var(--white);
+  border-radius: 0.4em;
+}
+
+.rmv-btn:focus,
+.rmv-btn:hover {
+  text-decoration: underline;
+  color: var(--white);
+  background-color: var(--section-col);
+  border: 1px solid var(--white);
+  outline: 1px solid var(--white);
+}
+
+.rmv-btn:hover {
+  cursor: pointer;
 }
 
 /* Tab Btns and Forms Container */
