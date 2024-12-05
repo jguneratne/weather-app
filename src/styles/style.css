@@ -219,6 +219,10 @@ input {
   outline: 3px solid var(--white);
 }
 
+.location:hover {
+  cursor: pointer;
+}
+
 .input-error {
   color: red;
   text-align: right;
@@ -285,6 +289,15 @@ input[type="radio"]:not(:disabled):checked {
   );
 }
 
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+input[type="radio"]:not(:disabled):focus,
+input[type="radio"]:not(:checked):focus {
+  outline: 1px solid var(--white);
+}
+
 .fahrenheit,
 .metric {
   margin-top: 0.4em;
@@ -300,13 +313,17 @@ input[type="radio"]:not(:disabled):checked {
   border-radius: 0.4em;
 }
 
+.forecast-btn:focus,
 .forecast-btn:hover {
-  cursor: pointer;
   text-decoration: underline;
   color: var(--white);
   background-color: var(--head-foot-col);
   border: 1px solid var(--white);
   outline: 1px solid var(--white);
+}
+
+.forecast-btn:hover {
+  cursor: pointer;
 }
 
 /* Locations Drop-Down */
@@ -360,6 +377,10 @@ input[type="radio"]:not(:disabled):checked {
 .saved-locations:focus {
   border: 3px solid var(--section-border-col);
   outline: 3px solid var(--white);
+}
+
+.saved-locations:hover {
+  cursor: pointer;
 }
 
 .attr-line {
@@ -525,6 +546,7 @@ input[type="radio"]:not(:disabled):checked {
 .today-btn:hover,
 .fifteen-btn:hover,
 .historic-btn:hover {
+  cursor: pointer;
   background-color: var(--section-col);
   color: var(--white);
   text-decoration: underline;
