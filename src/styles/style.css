@@ -528,6 +528,7 @@ input[type="radio"]:not(:checked):focus {
 }
 
 .today-btn,
+.hourly-btn,
 .fifteen-btn,
 .historic-btn {
   font-family: "Poppins";
@@ -577,6 +578,7 @@ input[type="radio"]:not(:checked):focus {
   background-color: var(--forecast-card-col);
   width: 90%;
   max-width: 13.6em;
+  max-height: min-content;
   border: 1px solid transparent;
   border-radius: 0.6em;
   margin: 1em 0;
@@ -592,6 +594,7 @@ input[type="radio"]:not(:checked):focus {
 }
 
 .today-date,
+.hour,
 .date {
   font-size: 1.2rem;
   font-weight: bold;
@@ -626,6 +629,7 @@ input[type="radio"]:not(:checked):focus {
 }
 
 .today-icon-div,
+.hourly-icon-div,
 .icon-div {
   margin: 1em auto;
 }
@@ -649,6 +653,7 @@ input[type="radio"]:not(:checked):focus {
   margin: 0;
 }
 
+.hourly-temp-feel-div,
 .min-max-div {
   display: flex;
   flex-wrap: wrap;
