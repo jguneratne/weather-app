@@ -52,7 +52,7 @@ export async function getLocationName() {
       removeLocation.push(displayLocation.returnedLocation);
 
       localStorage.setItem("locationValues", JSON.stringify(removeLocation));
-      console.log(JSON.parse(localStorage.getItem("locationValues")));
+      // console.log(JSON.parse(localStorage.getItem("locationValues")));
       // rebuild location select menu to reflect new order of locations
       handleLocationDropdown();
     } else {

@@ -1,7 +1,7 @@
 import { locationsMenu } from "./variables";
 
 export function handleLocationDropdown() {
-  console.log(JSON.parse(localStorage.getItem("locationValues")));
+  // console.log(JSON.parse(localStorage.getItem("locationValues")));
 
   replaceLocationEntries();
   addLocationEntries();
