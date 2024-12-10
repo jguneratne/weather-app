@@ -1,6 +1,7 @@
 import {
   today,
   todayOnScreen,
+  hourlyForecastDiv,
   fifteenForecastDiv,
   historicForecastDiv,
 } from "./variables";
@@ -49,10 +50,90 @@ export function displayToday(todayData) {
   todayMax.textContent = todayData.days[0].tempmax + "°";
 }
 
+export function displayHourly(todayData) {
+  removeHourly();
+  const date = new Date();
+  const currentHour = date.getHours().toString().padStart(2, "0") + ":00:00";
+
+  const todayHours = todayData.days[0].hours;
+  const tomorrowHours = todayData.days[1].hours;
+  const forecastHours = [...todayHours, ...tomorrowHours];
+  console.log(forecastHours);
+
+  const thisHour = forecastHours.find(
+    ({ datetime }) => datetime === currentHour, //Look for the first forecastHours[i].datetime that matches the current hour
+  );
+  // console.log(thisHour);
+  const thisHourIndex = forecastHours.indexOf(thisHour);
+
+  for (let i = thisHourIndex; i < thisHourIndex + 12; i++) {
+    console.log(forecastHours[i]);
+
+    const forecastCard = document.createElement("div");
+    forecastCard.classList = "forecast-card";
+
+    const hourLine = document.createElement("div");
+    hourLine.classList = "data-line hour-line";
+
+    const hour = document.createElement("p");
+    hour.classList = "hour";
+    hour.style.fontWeight = "bold";
+    hour.textContent = forecastHours[i].datetime;
+
+    const iconDiv = document.createElement("div");
+    iconDiv.classList = "data-line hourly-icon-div";
+
+    const hourlyIconName = forecastHours[i].icon;
+    const hourlyIconURL = weatherIcons[hourlyIconName];
+
+    if (hourlyIconURL) {
+      const hourlyWeatherIcon = document.createElement("img");
+      hourlyWeatherIcon.src = hourlyIconURL;
+      hourlyWeatherIcon.classList.add("weather-icon");
+      hourlyWeatherIcon.setAttribute("alt", hourlyIconName + "icon");
+      iconDiv.appendChild(hourlyWeatherIcon);
+    }
+
+    const hourlyTempDiv = document.createElement("div");
+    hourlyTempDiv.classList = "hourly-temp-feel-div";
+
+    const tempLine = document.createElement("div");
+    tempLine.classList = "data-line temp-line";
+
+    const tempHeading = document.createElement("p");
+    tempHeading.classList = "data-heading";
+    tempHeading.textContent = "Temp";
+
+    const todayTemp = document.createElement("p");
+    todayTemp.classList = "today-temp";
+    todayTemp.textContent = forecastHours[i].temp;
+
+    const feelHeading = document.createElement("p");
+    feelHeading.classList = "data-heading";
+    feelHeading.textContent = "Feel:";
+
+    const todayFeel = document.createElement("p");
+    todayFeel.classList = "today-feels";
+    todayFeel.textContent = forecastHours[i].feelslike;
+
+    hourlyForecastDiv.appendChild(forecastCard);
+    forecastCard.appendChild(hourLine);
+    hourLine.appendChild(hour);
+    forecastCard.appendChild(iconDiv);
+    forecastCard.appendChild(hourlyTempDiv);
+    hourlyTempDiv.appendChild(tempLine);
+    tempLine.appendChild(tempHeading);
+    tempLine.appendChild(todayTemp);
+    hourlyTempDiv.appendChild(tempLine);
+    tempLine.appendChild(feelHeading);
+    tempLine.appendChild(todayFeel);
+  }
+}
+
 export function displayFifteenDay(todayData) {
   removeFifteen();
   const fifteenDay = todayData.days;
-  console.log(fifteenDay);
+  // console.log(fifteenDay);
   fifteenDay.forEach((day) => {
     const forecastCard = document.createElement("div");
     forecastCard.classList = "forecast-card";
@@ -91,7 +172,7 @@ export function displayFifteenDay(todayData) {
     maxTemp.classList = "max";
 
     const dateContent = new Date(day.datetime).toString().slice(0, 15);
-    console.log(dateContent);
+    // console.log(dateContent);
     date.textContent = dateContent;
 
     const fifteenIconName = day.icon;
@@ -193,6 +274,12 @@ export function displayHistoricDays(historicData) {
     maxLine.appendChild(maxHeading);
     maxLine.appendChild(maxTemp);
   });
+}
+
+function removeHourly() {
+  while (hourlyForecastDiv.firstChild) {
+    hourlyForecastDiv.removeChild(hourlyForecastDiv.firstChild);
+  }
 }
 
 function removeFifteen() {

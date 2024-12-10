@@ -11,6 +11,7 @@ import {
   date2,
   locationsMenu,
   todayForecastDiv,
+  hourlyForecastDiv,
   fifteenForecastDiv,
   historicForecastDiv,
 } from "./variables";
@@ -35,6 +36,7 @@ export function handleFormSubmit() {
 export function fetchForecast() {
   if (
     todayForecastDiv.classList.contains("forecast-info--active") ||
+    hourlyForecastDiv.classList.contains("forecast-info--active") ||
     fifteenForecastDiv.classList.contains("forecast-info--active")
   ) {
     console.log("Loading Today...");
@@ -52,7 +54,7 @@ export function fetchForecast() {
 function handleInput() {
   if (!locationInput.value && locationsMenu.value) {
     location.enteredLocation = locationsMenu.value;
-    console.log(location.userLocation);
+    // console.log(location.userLocation);
   } else if (
     (locationInput.value && !locationsMenu.value) ||
     (locationInput.value && locationsMenu.value)
@@ -72,10 +74,10 @@ function handleInput() {
     }
   }
 
-  console.log(location.userLocation);
-  console.log(date1.userDate1);
-  console.log(date2.userDate2);
-  console.log(unitValue.enteredUnitValue);
+  // console.log(location.userLocation);
+  // console.log(date1.userDate1);
+  // console.log(date2.userDate2);
+  // console.log(unitValue.enteredUnitValue);
 }
 
 function clearLocationField() {

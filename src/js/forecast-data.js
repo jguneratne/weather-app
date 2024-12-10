@@ -15,6 +15,7 @@ import { getLocationName } from "./location.js";
 
 import {
   displayToday,
+  displayHourly,
   displayFifteenDay,
   displayHistoricDays,
 } from "./display-forecasts.js";
@@ -48,6 +49,7 @@ export async function getTodayForecast() {
 
     loader.style.display = "none";
     displayToday(todayData);
+    displayHourly(todayData);
     displayFifteenDay(todayData);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
