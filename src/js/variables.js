@@ -40,7 +40,7 @@ localStorage.setItem("locationValues", JSON.stringify(locationValues));
 
 // Form Inputs
 
-export const form = document.querySelector(".input-form");
+export const form = document.getElementById("forecast-form");
 export const locationInput = document.querySelector(".location");
 export const inputError = document.querySelector(".input-error");
 export const unitsInput = document.getElementsByName("units");
