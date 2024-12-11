@@ -16,7 +16,11 @@ export function selectForecastTab() {
   todayForecastDiv.classList.add("forecast-info--active");
 
   tabBtnsDiv.addEventListener("pointerdown", (e) => {
-    console.log(e.target.dataset.tab);
+    // console.log(e.target);
+    // console.log(e.target.dataset.tab);
+    if (!e.target.dataset.tab) {
+      return;
+    }
 
     tabBtns.forEach((btn) => {
       btn.classList.remove("tab-btn--active");
