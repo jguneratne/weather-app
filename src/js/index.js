@@ -1,12 +1,14 @@
 console.log("Weather App");
 
+import { locationInput, locationsMenu } from "./variables";
+
 import { toggleLocation } from "./change-location";
 
 import { getAndToggleUnits } from "./toggle-units";
 
 import { selectForecastTab } from "./tabs-ctrl";
 
-import { handleFormSubmit } from "./user-input";
+import { handleFormSubmit, fetchForecast } from "./user-input";
 
 import { handleLocationDropdown } from "./location-list";
 
@@ -19,4 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   selectForecastTab();
   handleFormSubmit();
   editLocationList();
+});
+
+window.addEventListener("load", () => {
+  if (!locationInput.value && !locationsMenu.value) {
+    return;
+  } else {
+    fetchForecast();
+  }
 });
