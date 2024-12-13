@@ -1,11 +1,61 @@
 import { handleLocationDropdown } from "./location-list";
 
+import { locationsMenu, locationInput } from "./variables";
+
 export function editLocationList() {
-  const editBtn = document.querySelector(".edit-btn-img");
+  const editBtn = document.querySelector(".edit-btn");
+  const editBtnImg = document.querySelector(".edit-btn-img");
   const editFormDiv = document.querySelector(".loc-edit-box");
 
   editBtn.addEventListener("pointerdown", (e) => {
-    if (e.target === editBtn) {
+    e.preventDefault();
+    if (
+      (e.target === editBtn || e.target === editBtnImg) &&
+      locationsMenu.length <= 1
+    ) {
+      editFormDiv.style.display = "initial";
+
+      const noLocsDiv = document.createElement("div");
+      noLocsDiv.setAttribute("class", "no-locs-div");
+
+      const noLocs = document.createElement("p");
+      noLocs.setAttribute("class", "no-locs");
+      noLocs.textContent = "You do not have any saved locations.";
+      noLocs.style.fontWeight = "bold";
+
+      const confirmBtn = document.createElement("button");
+      confirmBtn.type = "button";
+      confirmBtn.textContent = "OK";
+      confirmBtn.setAttribute("class", "confirm-btn");
+
+      while (editFormDiv.firstChild) {
+        editFormDiv.removeChild(editFormDiv.firstChild);
+      }
+
+      editFormDiv.appendChild(noLocsDiv);
+      noLocsDiv.appendChild(noLocs);
+      noLocsDiv.appendChild(confirmBtn);
+
+      if (confirmBtn) {
+        confirmBtn.focus();
+      }
+      confirmBtn.addEventListener("pointerdown", () => {
+        editFormDiv.style.display = "none";
+        locationInput.focus();
+      });
+
+      confirmBtn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          editFormDiv.style.display = "none";
+          locationInput.focus();
+        }
+      });
+    }
+
+    if (
+      (e.target === editBtn || e.target === editBtnImg) &&
+      locationsMenu.length > 1
+    ) {
       editFormDiv.style.display = "initial";
 
       const editForm = document.querySelector(".edit-form");

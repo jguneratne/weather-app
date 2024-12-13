@@ -298,7 +298,8 @@ input {
 }
 
 .input-error {
-  color: red;
+  color: var(--white);
+  border-bottom: 0.1em solid var(--white);
   text-align: right;
   display: none;
 }
@@ -511,6 +512,7 @@ input[type="radio"]:not(:checked):focus {
   display: none;
 }
 
+.no-locs-div,
 .edit-form {
   width: 85%;
   margin: 1em auto;
@@ -550,6 +552,7 @@ input[type="radio"]:not(:checked):focus {
   width: 1.5em;
 }
 
+.no-locs,
 .instruct {
   font-size: 1.2rem;
 }
@@ -577,6 +580,7 @@ input[type="radio"]:not(:checked):focus {
   margin-bottom: 0.3em;
 }
 
+.confirm-btn,
 .rmv-btn {
   padding: 0.5em 1em;
   margin-bottom: 2em;
@@ -587,7 +591,13 @@ input[type="radio"]:not(:checked):focus {
   border-radius: 0.4em;
 }
 
+.confirm-btn {
+  margin-top: 2em;
+}
+
+.confirm-btn:focus,
 .rmv-btn:focus,
+.confirm-btn:hover,
 .rmv-btn:hover {
   text-decoration: underline;
   color: var(--white);
@@ -596,6 +606,7 @@ input[type="radio"]:not(:checked):focus {
   outline: 1px solid var(--white);
 }
 
+.confirm-btn:hover,
 .rmv-btn:hover {
   cursor: pointer;
 }
