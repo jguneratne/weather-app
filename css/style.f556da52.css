@@ -553,6 +553,7 @@ input[type="radio"]:not(:checked):focus {
 .no-locs,
 .instruct {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .edit-menu {
@@ -847,4 +848,4 @@ input[type="radio"]:not(:checked):focus {
   outline: 0.1em solid var(--white);
 }
 
-/*# sourceMappingURL=style.e77e42dc.css.map*/
+/*# sourceMappingURL=style.f556da52.css.map*/
