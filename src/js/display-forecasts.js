@@ -9,6 +9,7 @@ import {
 import { weatherIcons } from "./weather-icons";
 
 export function displayToday(todayData) {
+  const forecastCard = document.querySelector(".today-forecast-card");
   const todayDate = document.querySelector(".today-date");
   const todayDescrip = document.querySelector(".today-description");
   const todayIconDiv = document.querySelector(".today-icon-div");
@@ -37,7 +38,7 @@ export function displayToday(todayData) {
     const weatherIcon = document.createElement("img");
     weatherIcon.src = iconURL;
     weatherIcon.classList.add("weather-icon");
-    weatherIcon.setAttribute("alt", iconName + "icon");
+    weatherIcon.setAttribute("alt", iconName + " icon");
     todayIconDiv.appendChild(weatherIcon);
   }
 
@@ -90,7 +91,7 @@ export function displayHourly(todayData) {
       const hourlyWeatherIcon = document.createElement("img");
       hourlyWeatherIcon.src = hourlyIconURL;
       hourlyWeatherIcon.classList.add("weather-icon");
-      hourlyWeatherIcon.setAttribute("alt", hourlyIconName + "icon");
+      hourlyWeatherIcon.setAttribute("alt", hourlyIconName + " icon");
       iconDiv.appendChild(hourlyWeatherIcon);
     }
 
@@ -102,7 +103,7 @@ export function displayHourly(todayData) {
 
     const tempHeading = document.createElement("p");
     tempHeading.classList = "data-heading";
-    tempHeading.textContent = "Temp";
+    tempHeading.textContent = "Temperature:";
 
     const todayTemp = document.createElement("p");
     todayTemp.classList = "today-temp";
@@ -110,7 +111,7 @@ export function displayHourly(todayData) {
 
     const feelHeading = document.createElement("p");
     feelHeading.classList = "data-heading";
-    feelHeading.textContent = "Feel:";
+    feelHeading.textContent = "Feels Like:";
 
     const todayFeel = document.createElement("p");
     todayFeel.classList = "today-feels";
@@ -132,6 +133,7 @@ export function displayHourly(todayData) {
 
 export function displayFifteenDay(todayData) {
   removeFifteen();
+
   const fifteenDay = todayData.days;
   // console.log(fifteenDay);
   fifteenDay.forEach((day) => {
@@ -156,7 +158,7 @@ export function displayFifteenDay(todayData) {
 
     const minHeading = document.createElement("p");
     minHeading.classList = "data-heading min-heading";
-    minHeading.textContent = "Min:";
+    minHeading.textContent = "Min-Temp:";
 
     const minTemp = document.createElement("p");
     minTemp.classList = "min";
@@ -166,7 +168,7 @@ export function displayFifteenDay(todayData) {
 
     const maxHeading = document.createElement("p");
     maxHeading.classList = "data-heading max-heading";
-    maxHeading.textContent = "Max:";
+    maxHeading.textContent = "Max-Temp:";
 
     const maxTemp = document.createElement("p");
     maxTemp.classList = "max";
@@ -182,7 +184,7 @@ export function displayFifteenDay(todayData) {
       const fifteenWeatherIcon = document.createElement("img");
       fifteenWeatherIcon.src = fifteenIconURL;
       fifteenWeatherIcon.classList.add("weather-icon");
-      fifteenWeatherIcon.setAttribute("alt", fifteenIconName + "icon");
+      fifteenWeatherIcon.setAttribute("alt", fifteenIconName + " icon");
       iconDiv.appendChild(fifteenWeatherIcon);
     }
 
@@ -229,7 +231,7 @@ export function displayHistoricDays(historicData) {
 
     const minHeading = document.createElement("p");
     minHeading.classList = "data-heading min-heading";
-    minHeading.textContent = "Min:";
+    minHeading.textContent = "Min-Temp:";
 
     const minTemp = document.createElement("p");
     minTemp.classList = "min";
@@ -239,7 +241,7 @@ export function displayHistoricDays(historicData) {
 
     const maxHeading = document.createElement("p");
     maxHeading.classList = "data-heading max-heading";
-    maxHeading.textContent = "Max:";
+    maxHeading.textContent = "Max-Temp:";
 
     const maxTemp = document.createElement("p");
     maxTemp.classList = "max";
@@ -255,7 +257,7 @@ export function displayHistoricDays(historicData) {
       const historicWeatherIcon = document.createElement("img");
       historicWeatherIcon.src = historicIconURL;
       historicWeatherIcon.classList.add("weather-icon");
-      historicWeatherIcon.setAttribute("alt", historicIconName + "icon");
+      historicWeatherIcon.setAttribute("alt", historicIconName + " icon");
       iconDiv.appendChild(historicWeatherIcon);
     }
 

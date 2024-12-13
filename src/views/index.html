@@ -57,7 +57,7 @@
                     <img
                       class="edit-btn-img"
                       src="@images/icons/edit-button-svgrepo-com.svg"
-                      alt="Edit Locations Button"
+                      alt="Click icon to remove locations from saved locations list"
                     />
                   </button>
 
@@ -70,7 +70,12 @@
                   </select>
                 </div>
                 <div class="attr-line">
-                  <span class="loc-attr">Location Data from </span>
+                  <span
+                    class="loc-attr"
+                    tabindex="0"
+                    aria-label="Location data from"
+                    >Location Data from
+                  </span>
                   <span class="loc-attr">
                     <a
                       href="http://www.openstreetmap.org/copyright"
@@ -85,7 +90,7 @@
 
             <div class="form-line">
               <fieldset>
-                <legend>Units:</legend>
+                <legend tabindex="0">Units:</legend>
 
                 <div class="buttons-line">
                   <div class="radio-btn">
@@ -94,6 +99,7 @@
                       id="fahrenheit-unit"
                       name="units"
                       class="fahrenheit-unit"
+                      aria-label="Click to select fahrenheit"
                       value="us"
                     />
                     <label for="fahrenheit-unit" class="fahrenheit"
@@ -107,6 +113,7 @@
                       id="metric-unit"
                       name="units"
                       class="metric-unit"
+                      aria-label="Click to select celcius"
                       value="metric"
                     />
                     <label for="metric-unit" class="metric">Celcius</label>
@@ -143,16 +150,47 @@
         </div>
 
         <div class="display-info">
-          <div class="btns-div">
-            <button type="button" class="tab-btn today-btn" data-tab="today">
+          <div
+            class="btns-div"
+            role="tablist"
+            aria-orientation="vertical"
+            aria-label="Forecast Tabs Navigation"
+          >
+            <button
+              type="button"
+              class="tab-btn today-btn"
+              id="today-tab"
+              role="tab"
+              aria-controls="today-region"
+              aria-label="Forecast for today"
+              aria-selected="true"
+              tabindex="0"
+              data-tab="today"
+            >
               Today
             </button>
-            <button type="button" class="tab-btn hourly-btn" data-tab="hourly">
+            <button
+              type="button"
+              class="tab-btn hourly-btn"
+              id="hourly-tab"
+              role="tab"
+              aria-controls="hourly-region"
+              aria-label="Forecast for next 12 hours"
+              aria-selected="false"
+              tabindex="-1"
+              data-tab="hourly"
+            >
               Next 12 Hours
             </button>
             <button
               type="button"
               class="tab-btn fifteen-btn"
+              id="fiften-tab"
+              role="tab"
+              aria-controls="fifteen-region"
+              aria-label="Forecast for next 15 days"
+              aria-selected="false"
+              tabindex="-1"
               data-tab="fifteen"
             >
               Fifteen Day
@@ -160,13 +198,26 @@
             <button
               type="button"
               class="tab-btn historic-btn"
+              id="historic-tab"
+              role="tab"
+              aria-controls="historic-region"
+              aria-label="Historic forecast"
+              aria-selected="false"
+              tabindex="-1"
               data-tab="historic"
             >
               Historic
             </button>
           </div>
 
-          <div class="forecast-info" data-name="today">
+          <div
+            class="forecast-info"
+            id="today-region"
+            role="tabpanel"
+            aria-labelledby="today-tab"
+            tabindex="0"
+            data-name="today"
+          >
             <div class="forecast-card today-forecast-card">
               <div class="date-div">
                 <div class="data-line today-date-line">
@@ -181,31 +232,38 @@
 
               <div class="temp-feel-div">
                 <div class="data-line temp-line">
-                  <p class="data-heading">Temp:</p>
+                  <p class="data-heading">Temperature:</p>
                   <p class="today-temp">- - -</p>
                 </div>
 
                 <div class="data-line temp-line">
-                  <p class="data-heading">Feel:</p>
+                  <p class="data-heading">Feels Like:</p>
                   <p class="today-feels">- - -</p>
                 </div>
               </div>
 
               <div class="min-max-div">
                 <div class="data-line min-line">
-                  <p class="data-heading min-heading">Min:</p>
+                  <p class="data-heading min-heading">Min-Temp:</p>
                   <p class="today-min">- - -</p>
                 </div>
 
                 <div class="data-line max-line">
-                  <p class="data-heading max-heading">Max:</p>
+                  <p class="data-heading max-heading">Max-Temp:</p>
                   <p class="today-max">- - -</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="forecast-info" data-name="hourly">
+          <div
+            class="forecast-info"
+            id="hourly-region"
+            role="tabpanel"
+            aria-labelledby="hourly-tab"
+            tabindex="0"
+            data-name="hourly"
+          >
             <div class="forecast-card">
               <div class="data-line hour-line">
                 <p class="hour">- - -</p>
@@ -215,20 +273,31 @@
 
               <div class="hourly-temp-feel-div">
                 <div class="data-line temp-line">
-                  <p class="data-heading">Temp:</p>
+                  <p class="data-heading">Temperature:</p>
                   <p class="today-temp">- - -</p>
                 </div>
 
                 <div class="data-line temp-line">
-                  <p class="data-heading">Feel:</p>
+                  <p class="data-heading">Feels Like:</p>
                   <p class="today-feels">- - -</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="forecast-info" data-name="fifteen">
-            <div class="forecast-card">
+          <div
+            class="forecast-info"
+            id="fifteen-region"
+            role="tabpanel"
+            aria-labelledby="fifteen-tab"
+            tabindex="0"
+            data-name="fifteen"
+          >
+            <div
+              class="forecast-card"
+              tabindex="0"
+              aria-label="Get forecast to populate forecast data."
+            >
               <div class="data-line date-line">
                 <p class="date">- - -</p>
               </div>
@@ -237,19 +306,26 @@
 
               <div class="min-max-div">
                 <div class="data-line min-line">
-                  <p class="data-heading min-heading">Min:</p>
+                  <p class="data-heading min-heading">Min-Temp:</p>
                   <p class="min">- - -</p>
                 </div>
 
                 <div class="data-line today-max-line">
-                  <p class="data-heading max-heading">Max:</p>
+                  <p class="data-heading max-heading">Max-Temp:</p>
                   <p class="max">- - -</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="forecast-info" data-name="historic">
+          <div
+            class="forecast-info"
+            id="historic-region"
+            role="tabpanel"
+            aria-labelledby="historic-tab"
+            tabindex="0"
+            data-name="historic"
+          >
             <div class="forecast-card">
               <div class="data-line date-line">
                 <p class="date">Choose Dates</p>
