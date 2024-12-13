@@ -5,6 +5,7 @@
   --section-col: #387e9f;
   --section-border-col: #b5adad;
   --forecast-card-col: rgba(227, 232, 228, 0.2);
+  --loading-col: #ff7a59;
   --white: #ffffff;
 }
 
@@ -101,6 +102,19 @@ legend {
   font-weight: 600;
   font-size: 1.2rem;
   color: var(--white);
+  border: 0.1em solid transparent;
+  outline: 0.1em solid transparent;
+  border-radius: 0.3em;
+}
+
+legend {
+  padding: 0.3em;
+}
+
+legend:focus {
+  border: 0.1em solid var(--loading-col);
+  outline: 0.1em solid var(--loading-col);
+  border-radius: 0.3em;
 }
 
 input,
@@ -148,7 +162,7 @@ header > h1 {
   margin: auto;
   border: 0.8em solid #e2e6ec;
   border-radius: 50%;
-  border-top: 0.8em solid #ff7a59;
+  border-top: 0.8em solid var(--loading-col);
   width: 6em;
   height: 6em;
   animation: spinner 2.5s linear infinite;
@@ -389,7 +403,16 @@ input[type="radio"]:not(:checked):focus {
   max-width: max-content;
   text-align: right;
   margin: 0.6em 0 0.6em auto;
+  padding: 0.3em;
   color: var(--white);
+  border: 0.16em solid transparent;
+  outline: 0.16em solid transparent;
+  border-radius: 0.3em;
+}
+
+.attr-line:focus {
+  border: 0.16em solid var(--loading-col);
+  outline: 0.16em solid transparent;
 }
 
 .loc-attr {
@@ -399,6 +422,15 @@ input[type="radio"]:not(:checked):focus {
 .loc-attr > a {
   color: var(--white);
   cursor: pointer;
+  border: 0.1em solid transparent;
+  outline: 0.1em solid transparent;
+  padding: 0.2em;
+}
+
+.loc-attr > a:hover,
+.loc-attr > a:focus {
+  border: 0.1em solid var(--loading-col);
+  outline: 0.1em solid var(--loading-col);
 }
 
 /* Edit Locations Box */
@@ -545,12 +577,22 @@ input[type="radio"]:not(:checked):focus {
 }
 
 .today-btn:hover,
+.hourly-btn:hover,
 .fifteen-btn:hover,
 .historic-btn:hover {
   cursor: pointer;
   background-color: var(--section-col);
   color: var(--white);
   text-decoration: underline;
+}
+
+.today-btn:focus,
+.hourly-btn:focus,
+.fifteen-btn:focus,
+.historic-btn:focus {
+  border: 0.1em solid var(--loading-col);
+  border-right: none;
+  outline: 0.1em solid var(--loading-col);
 }
 
 .tab-btn--active {
@@ -562,9 +604,15 @@ input[type="radio"]:not(:checked):focus {
   grid-area: 1 / 2 / 2 / 3;
   padding: 0.5em;
   background-color: var(--section-col);
+  border: 0.1em solid var(--section-col);
   border-left: none;
   border-radius: 0 0.6em 0.6em 0.6em;
   display: none;
+}
+
+.forecast-info:focus {
+  border: 0.1em solid var(--loading-col);
+  outline: 0.1em solid var(--loading-col);
 }
 
 .forecast-info--active {
@@ -717,5 +765,15 @@ input[type="radio"]:not(:checked):focus {
 }
 
 .github-logo {
-  max-width: 2em;
+  max-width: 2.6em;
+  border: 0.1em solid transparent;
+  outline: 0.1em solid transparent;
+  border-radius: 0.3em;
+  padding: 0.3em;
+}
+
+.github-logo:focus,
+.github-logo:hover {
+  border: 0.1em solid var(--white);
+  outline: 0.1em solid var(--white);
 }
