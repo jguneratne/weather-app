@@ -4,7 +4,7 @@
   --main-col: #d8e9f1;
   --section-col: #387e9f;
   --section-border-col: #b5adad;
-  --forecast-card-col: rgba(227, 232, 228, 0.2);
+  --forecast-card-col: rgba(227, 232, 228, 0.1);
   --loading-col: #ff7a59;
   --white: #ffffff;
 }
@@ -849,4 +849,4 @@ input[type="radio"]:not(:checked):focus {
   outline: 0.1em solid var(--white);
 }
 
-/*# sourceMappingURL=style.8b7eddd6.css.map*/
+/*# sourceMappingURL=style.e14fc429.css.map*/
