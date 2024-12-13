@@ -110,7 +110,7 @@ export function displayHourly(todayData) {
     todayTemp.textContent = forecastHours[i].temp + "°";
 
     const feelHeading = document.createElement("p");
-    feelHeading.classList = "data-heading";
+    feelHeading.classList = "data-heading hour-feels-heading";
     feelHeading.textContent = "Feels Like:";
 
     const todayFeel = document.createElement("p");

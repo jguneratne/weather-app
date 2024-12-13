@@ -613,12 +613,17 @@ input[type="radio"]:not(:checked):focus {
   font-size: 1.2rem;
 }
 
+.hour-feels-heading {
+  margin-top: 1.5em;
+}
+
 .today-date-line {
   margin-bottom: 1em;
   text-align: center;
 }
 
-.date-line {
+.date-line,
+.hour-line {
   margin-bottom: 2em;
   text-align: center;
 }
