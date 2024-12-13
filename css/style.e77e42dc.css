@@ -503,8 +503,6 @@ input[type="radio"]:not(:checked):focus {
   margin-top: 4em;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
   border: 8px solid var(--white);
   border-radius: 0.3em;
   background-color: var(--head-foot-col);
@@ -849,4 +847,4 @@ input[type="radio"]:not(:checked):focus {
   outline: 0.1em solid var(--white);
 }
 
-/*# sourceMappingURL=style.e14fc429.css.map*/
+/*# sourceMappingURL=style.e77e42dc.css.map*/
