@@ -95,6 +95,9 @@ export async function getHistoricForecast() {
     displayHistoricDays(historicData);
   } catch (e) {
     console.error(`Critical failure: ${e.message}`);
+    loader.style.display = "none";
+    loaderErr.style.display = "initial";
+    clearErrBtn.focus();
   } finally {
     getLocationName();
   }
