@@ -13,6 +13,8 @@ export const historicForecastDiv = document.querySelector(
 
 // Loading Animation
 export const loader = document.querySelector(".loader-div");
+export const loaderErr = document.querySelector(".err-box-div");
+export const clearErrBtn = document.querySelector(".clear-err");
 
 // Forecast Data Variables
 export const key = "FYZ4WWVAF3DKLSGYMBZA734P4";

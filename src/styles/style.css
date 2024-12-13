@@ -143,6 +143,66 @@ header > h1 {
   color: var(--white);
 }
 
+/* ERROR BOX */
+
+.err-box-div {
+  width: 90%;
+  max-width: 30em;
+  position: absolute;
+  margin-top: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border: 8px solid var(--white);
+  border-radius: 0.3em;
+  background-color: var(--head-foot-col);
+
+  display: none;
+}
+
+.err-box {
+  width: 85%;
+  margin: 1em auto;
+  border: none;
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.err-msg {
+  font-size: 1.2rem;
+}
+
+.err-msg:not(:last-child) {
+  margin: 0.1em;
+}
+
+.clear-err {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-size: 1.1rem;
+  background: var(--white);
+  border: 1px solid var(--white);
+  outline: 1px solid var(--white);
+  border-radius: 0.4em;
+}
+
+.clear-err:focus,
+.clear-err:hover {
+  text-decoration: underline;
+  color: var(--white);
+  background-color: var(--section-col);
+  border: 1px solid var(--white);
+  outline: 1px solid var(--white);
+}
+
+.clear-err:hover {
+  cursor: pointer;
+}
+
 /* Loading Animation */
 
 .loader-div {

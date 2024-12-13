@@ -14,6 +14,8 @@ import { handleLocationDropdown } from "./location-list";
 
 import { editLocationList } from "./location-edit-form";
 
+import { clearErr } from "./clear-loading-err";
+
 document.addEventListener("DOMContentLoaded", () => {
   handleLocationDropdown();
   toggleLocation();
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   selectForecastTab();
   handleFormSubmit();
   editLocationList();
+  clearErr();
 });
 
 window.addEventListener("load", () => {
