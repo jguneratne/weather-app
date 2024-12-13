@@ -107,7 +107,7 @@ export function displayHourly(todayData) {
 
     const todayTemp = document.createElement("p");
     todayTemp.classList = "today-temp";
-    todayTemp.textContent = forecastHours[i].temp;
+    todayTemp.textContent = forecastHours[i].temp + "°";
 
     const feelHeading = document.createElement("p");
     feelHeading.classList = "data-heading";
@@ -115,7 +115,7 @@ export function displayHourly(todayData) {
 
     const todayFeel = document.createElement("p");
     todayFeel.classList = "today-feels";
-    todayFeel.textContent = forecastHours[i].feelslike;
+    todayFeel.textContent = forecastHours[i].feelslike + "°";
 
     hourlyForecastDiv.appendChild(forecastCard);
     forecastCard.appendChild(hourLine);
@@ -188,8 +188,8 @@ export function displayFifteenDay(todayData) {
       iconDiv.appendChild(fifteenWeatherIcon);
     }
 
-    minTemp.textContent = day.tempmin;
-    maxTemp.textContent = day.tempmax;
+    minTemp.textContent = day.tempmin + "°";
+    maxTemp.textContent = day.tempmax + "°";
 
     fifteenForecastDiv.appendChild(forecastCard);
     forecastCard.appendChild(dateLine);
@@ -261,8 +261,8 @@ export function displayHistoricDays(historicData) {
       iconDiv.appendChild(historicWeatherIcon);
     }
 
-    minTemp.textContent = day.tempmin;
-    maxTemp.textContent = day.tempmax;
+    minTemp.textContent = day.tempmin + "°";
+    maxTemp.textContent = day.tempmax + "°";
 
     historicForecastDiv.appendChild(forecastCard);
     forecastCard.appendChild(dateLine);
