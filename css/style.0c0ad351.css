@@ -250,8 +250,7 @@ header > h1 {
 }
 
 .form-line {
-  max-width: 90%;
-  margin: 0.5em auto 1em auto;
+  margin: 0.5em 0 1em 0;
   text-align: center;
 }
 
@@ -274,7 +273,8 @@ input {
 }
 
 .location-input-line {
-  margin-bottom: 2em;
+  max-width: 90%;
+  margin: 0 auto 2em auto;
 }
 
 .location {
@@ -848,4 +848,4 @@ input[type="radio"]:not(:checked):focus {
   outline: 0.1em solid var(--white);
 }
 
-/*# sourceMappingURL=style.6cbbfdee.css.map*/
+/*# sourceMappingURL=style.0c0ad351.css.map*/
