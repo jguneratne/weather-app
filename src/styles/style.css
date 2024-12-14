@@ -249,7 +249,8 @@ header > h1 {
 }
 
 .form-line {
-  margin: 0.5em 0 1em 0;
+  max-width: 90%;
+  margin: 0.5em auto 1em auto;
   text-align: center;
 }
 
