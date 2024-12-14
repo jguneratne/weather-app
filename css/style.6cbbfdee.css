@@ -240,6 +240,7 @@ header > h1 {
 /* FORM */
 
 .form-div {
+  width: 100%;
   min-width: 20em;
   max-width: 40em;
   max-height: min-content;
@@ -249,7 +250,8 @@ header > h1 {
 }
 
 .form-line {
-  margin: 0.5em 0 1em 0;
+  max-width: 90%;
+  margin: 0.5em auto 1em auto;
   text-align: center;
 }
 
@@ -614,6 +616,7 @@ input[type="radio"]:not(:checked):focus {
   display: grid;
   grid-template-columns: min-content auto;
   grid-template-rows: 1fr;
+  width: 100%;
   min-width: 20em;
   max-width: 40em;
   max-height: min-content;
@@ -845,4 +848,4 @@ input[type="radio"]:not(:checked):focus {
   outline: 0.1em solid var(--white);
 }
 
-/*# sourceMappingURL=style.aa4540bf.css.map*/
+/*# sourceMappingURL=style.6cbbfdee.css.map*/
