@@ -30,6 +30,10 @@ const pastDate = new Date();
 pastDate.setDate(new Date().getDate() - 9);
 export const todayMinusNine = pastDate.toISOString().substring(0, 10);
 
+const getYesterday = new Date();
+getYesterday.setDate(new Date().getDate() - 1);
+export const yesterday = getYesterday.toISOString().substring(0, 10);
+
 // Location Dropdown
 
 export const locationsMenu = document.getElementById("saved-locations");

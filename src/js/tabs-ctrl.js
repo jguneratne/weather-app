@@ -5,6 +5,7 @@ import {
   date2Input,
   today,
   todayMinusNine,
+  yesterday,
   todayForecastDiv,
 } from "./variables";
 
@@ -83,7 +84,11 @@ function changeTabs(e) {
   // Make historic dates selection visible if historic tab selected
   if (targetTab.dataset.tab === "historic") {
     date1Input.value = todayMinusNine;
+    date1Input.setAttribute("max", yesterday);
+
     date2Input.value = today;
+    date2Input.setAttribute("max", today);
+
     datesDiv.style.display = "initial";
   } else {
     datesDiv.style.display = "none";
