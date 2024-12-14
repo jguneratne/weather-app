@@ -240,7 +240,6 @@ header > h1 {
 /* FORM */
 
 .form-div {
-  width: 50%;
   min-width: 20em;
   max-width: 40em;
   max-height: min-content;
@@ -269,7 +268,6 @@ input {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1em;
-  padding: 0 1em;
   margin-top: 2em;
 }
 
@@ -616,7 +614,6 @@ input[type="radio"]:not(:checked):focus {
   display: grid;
   grid-template-columns: min-content auto;
   grid-template-rows: 1fr;
-  width: 50%;
   min-width: 20em;
   max-width: 40em;
   max-height: min-content;
