@@ -327,6 +327,23 @@ input {
 .start,
 .end {
   text-align: center;
+  padding: 0.2em;
+  border: 0.1em solid transparent;
+  outline: 0.1em solid transparent;
+  border-radius: 0.2em;
+}
+
+.start:focus,
+.start:hover,
+.end:focus,
+.end:hover {
+  border: 0.1em solid var(--loading-col);
+  outline: 0.1em solid var(--loading-col);
+}
+
+.start:hover,
+.end:hover {
+  cursor: pointer;
 }
 
 .buttons-line {
@@ -850,4 +867,4 @@ input[type="radio"]:not(:checked):focus {
   outline: 0.1em solid var(--white);
 }
 
-/*# sourceMappingURL=style.1638966d.css.map*/
+/*# sourceMappingURL=style.f0461efb.css.map*/
