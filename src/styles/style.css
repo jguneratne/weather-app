@@ -256,7 +256,6 @@ header > h1 {
 
 fieldset {
   border: 0.4em solid transparent;
-  margin-top: 1em;
   color: var(--white);
 }
 
@@ -272,8 +271,7 @@ input {
   justify-content: space-evenly;
   gap: 1em;
   max-width: 90%;
-  margin: 2em auto;
-  margin-top: 2em;
+  margin: 2em auto 0 auto;
 }
 
 .location-input-line,
