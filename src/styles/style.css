@@ -327,6 +327,16 @@ input {
 .start,
 .end {
   text-align: center;
+  border: 0.1em solid transparent;
+  outline: 0.1em solid transparent;
+}
+
+.start:focus,
+.start:hover,
+.end:focus,
+.end:hover {
+  border: 0.1em solid var(--loading-col);
+  outline: 0.1em solid var(--loading-col);
 }
 
 .buttons-line {
